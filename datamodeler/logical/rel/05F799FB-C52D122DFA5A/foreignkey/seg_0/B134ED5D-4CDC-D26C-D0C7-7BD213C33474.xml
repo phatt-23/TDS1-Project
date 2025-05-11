@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="B134ED5D-4CDC-D26C-D0C7-7BD213C33474" containerWithKeyObject="46DC416F-C8B6-C549-386D-4498D7B8BCEE" localFKIndex="8BC57831-A88E-3CD4-61CA-030A6193251F" name="z_playlist_z_user_FK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>24FEC985-9A11-6D2A-84F2-19C4837C1159</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<referredTableLongName>z_user</referredTableLongName>
+<arc>EBF0050C-3C4C-55F7-89B1-D06708332942</arc>
+<deleteRule>SET NULL</deleteRule>
+<referredTableID>60496313-F2C2-2F4A-6824-E4361FA645F3</referredTableID>
+<keyObject>4CBB952A-006B-74B6-BDFE-708D5E3B4277</keyObject>
+<referredKeyID>4CBB952A-006B-74B6-BDFE-708D5E3B4277</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>user_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

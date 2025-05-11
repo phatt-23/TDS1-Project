@@ -1,0 +1,141 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A2F0E08C-4E2E-A05D-0C9C-8BB560FDAEDA" name="z_reaction">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>6BD37B36-34BD-0A63-566B-022D2CC5FAF8</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="reaction_id" id="5E72C84B-7067-8EEE-52EF-271A1C615837">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>51FEDF1D-748D-1341-4897-1C4041243B4E</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="reaction_kind" id="2CD05610-5730-1405-DDBC-BDEF9C9C2A3F">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>43180923-EA41-8B1A-ED46-A64024B104A4</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<use>0</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<domain>4B75E1DE-25AC-B34C-2871-D0A911F30B5C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="user_id" id="EF482215-7753-0A1D-1BFD-3FDFCDC8BFC5">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>4EEA1BF5-5B84-7924-CCEE-2A5F602B864A</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<structuredType>47E390DE-0671-C4B1-8428-0F45CBEE18F8</structuredType>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FE9651C6-7D93-9F7B-12C3-9D30A90705F0" referredColumn="A2CAA7B9-7F3A-7DB2-0175-B4C5424ADCA1"/>
+</associations>
+</Column>
+<Column name="video_id" id="26DEE690-A330-48AB-7052-318791B892BA">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>D00AA71E-AEB0-D49C-D2C3-E87C65854348</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4C5AA27F-252B-B790-62F5-98103428B330" referredColumn="642EB316-7955-F570-0330-41CBBDE147A8"/>
+</associations>
+</Column>
+<Column name="comment_id" id="64DC00F5-F96D-2BCE-D6E6-ED263420E78F">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>CB91D88F-AE6A-EFE1-29BF-07E0047648E2</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9214B070-03C6-0C15-359F-830948116513" referredColumn="6040534D-8FFD-80FA-7B16-5032350EEDB9"/>
+</associations>
+</Column>
+<Column name="reaction_date" id="0D85A502-4E86-8473-DFB1-F3DCD381BA93">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>36FA96D9-4287-2EEE-4288-77F30D6F5E0B</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<defaultValue>current_timestamp</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2D713B4A-ABBB-266D-BA11-5B79A123B7FF" name="z_reaction_PK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>5F9911F5-5084-107E-15F4-F15BDF909998</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5E72C84B-7067-8EEE-52EF-271A1C615837"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1F79963F-0521-26AD-198B-08B1453212CF" name="z_reaction_z_comment_FK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>E5FAB9AF-F1F9-75E3-86F2-78681D841161</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="64DC00F5-F96D-2BCE-D6E6-ED263420E78F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B782909D-BB1B-A9D7-B505-27AE535A4F85" name="z_reaction_z_user_FK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>DE021852-983B-7921-7E3C-1CAFFED2F9E1</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EF482215-7753-0A1D-1BFD-3FDFCDC8BFC5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F2230839-552E-4C92-396B-5299ECB0D375" name="z_reaction_z_video_FK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>4B4B039C-526D-6AD8-61CF-F511221183DF</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="26DEE690-A330-48AB-7052-318791B892BA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="523F4F7E-0C5D-2D71-4244-3A710A70A330" name="z_image_media">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>E19D297D-CD26-A211-24FF-958141FE100E</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="media_id" id="CFB681F4-2EE2-8BEA-E301-5AEA444E0ED2">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>87A16F68-061E-F636-7CC2-2A4F6A5EB6BB</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="88B6AD17-2031-6850-280C-47872788A7F9" referredColumn="1E5BC9FE-E3A1-3E52-2E37-88929CC7BF4C"/>
+</associations>
+</Column>
+<Column name="width" id="B8232168-E932-2C1F-7F32-14BF5AD472EC">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>F5D19307-E57B-5FBC-BD8E-F09C67BCF164</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="height" id="857621A4-CD16-54D3-E921-8C55E9A5A928">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>ADF31BF8-27AD-2691-D309-21F7EE3E46B0</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="format" id="C1A8E881-F559-165F-B6B2-2646B9E86585">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>AEAAE268-BA82-B17F-575B-5D57D8904F0D</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<use>0</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<domain>A34751EE-C349-5C78-2084-37E0FD13C39D</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6FFC2EB0-C440-9303-ABE1-7889F29CACA2" name="z_image_media_PK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>CBE66070-5308-8F19-0215-E3473F7E9EEC</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CFB681F4-2EE2-8BEA-E301-5AEA444E0ED2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AB0F3B49-2145-8A4E-E5A8-B5EDD84D3F28" name="z_image_media_z_media_FK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>1F9CFFBF-9F05-EFB0-4051-1B24B32643FC</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CFB681F4-2EE2-8BEA-E301-5AEA444E0ED2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

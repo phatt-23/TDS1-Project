@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EAEBAD12-F770-8E9D-B066-BDFC249305E6" name="z_comment_audit">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:17:38 UTC</createdTime>
+<generatorID>28C65AA4-EDC9-663F-A2DC-2D203B47E6DB</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="audit_id" id="F773EEAF-8244-579F-969B-D07936C092BE">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:17:38 UTC</createdTime>
+<generatorID>D91EB327-28E7-DC48-F84B-89EEA438BE17</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="comment_id" id="D10E4B17-156D-E3E2-28A4-6F351E4112ED">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:17:38 UTC</createdTime>
+<generatorID>0CC1270E-F2B2-3BE0-8D96-E8991647EB3B</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="58540E5C-5306-33EA-3160-2CDA2706382B" referredColumn="0FB1F6B0-6440-49D3-505A-C203E5DE9FDD"/>
+</associations>
+</Column>
+<Column name="old_content" id="E9C515DD-C3F1-D3D1-69EF-B9D5C5161BFE">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:17:38 UTC</createdTime>
+<generatorID>9B94032F-55E6-77DB-94DB-5B5E585D4B78</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="new_content" id="73875DD7-436E-319A-9B34-4574814DA19C">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:17:38 UTC</createdTime>
+<generatorID>6850CB81-EEA9-E963-D8C8-8C64D9A7B005</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="change_at" id="0C32F732-F464-EBAB-4342-D3371D0EA68F">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:17:38 UTC</createdTime>
+<generatorID>3C70BF19-8B4D-998E-A2D7-F629F70B6C42</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="48B837A1-7E17-1275-2B12-D3D94CC938B6" name="z_comment_audit_PK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:17:38 UTC</createdTime>
+<generatorID>AABF0797-4294-5132-5577-6FF0919DFAE9</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F773EEAF-8244-579F-969B-D07936C092BE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4A59CF3C-6DD6-9E67-6A74-C030BF4A6F85" name="z_comment_audit_z_comment_FK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:17:38 UTC</createdTime>
+<generatorID>8374F53E-0CAE-BDD8-0CE9-42980A847F7B</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D10E4B17-156D-E3E2-28A4-6F351E4112ED"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

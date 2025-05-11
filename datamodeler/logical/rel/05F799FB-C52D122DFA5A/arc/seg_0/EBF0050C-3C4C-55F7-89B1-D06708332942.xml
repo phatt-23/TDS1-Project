@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKArc class="oracle.dbtools.crest.model.design.relational.FKArc" directorySegmentName="seg_0" id="EBF0050C-3C4C-55F7-89B1-D06708332942" name="PlaylistCreator">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<mandatory>false</mandatory>
+<table>46DC416F-C8B6-C549-386D-4498D7B8BCEE</table>
+<fkeys>
+<fkeyID>B134ED5D-4CDC-D26C-D0C7-7BD213C33474</fkeyID>
+<fkeyID>FB3393CE-6655-DC78-BA6D-ABAD28A9E1D2</fkeyID>
+</fkeys>
+</FKArc>

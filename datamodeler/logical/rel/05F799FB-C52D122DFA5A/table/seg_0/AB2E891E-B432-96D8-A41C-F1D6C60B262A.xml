@@ -1,0 +1,223 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AB2E891E-B432-96D8-A41C-F1D6C60B262A" name="z_video">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>A88CEF6A-C6FF-BBD9-6962-B5CCBE42DE3C</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="video_id" id="5AB8EEF0-3488-B973-BC08-2B24AC352106">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>1390BBC9-0873-D18F-FDAD-CA584D70ED18</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="channel_id" id="1F41AEDA-C72D-8F80-4260-75DC781F2678">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>4DF1CB93-86AD-8FF1-07E3-6E9E8147F6BA</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F1158BC8-C17C-DB41-11A0-10AB04062991" referredColumn="79C5B790-998F-F561-42C1-3ABBA7945C9E"/>
+</associations>
+</Column>
+<Column name="thumbnail_media_id" id="29A3A02A-920B-CC99-37FF-2D2D34EF04B5">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>44DD5624-885F-CD06-9F1C-74912E78DCE5</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A3B99595-1FC3-99A6-E37D-C4CFA6F3CB2D" referredColumn="774F21F5-E46A-0478-9DF9-1E5218D2AD18"/>
+</associations>
+</Column>
+<Column name="video_media_id" id="78E0E840-DBFA-8061-B831-E803EA4EDAD5">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>CE7BCFDB-FF2E-7480-25DD-F59AD7D5163F</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1C56C207-7A53-63DB-14C2-189F56AFEBC9" referredColumn="F2BD164F-D83D-2F2F-91FC-5A827C8CDAE8"/>
+</associations>
+</Column>
+<Column name="visibility" id="BA032575-B168-7A99-B355-58F8185B957C">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>90ED44F0-A6DE-BE57-9380-1CC1D384DDBD</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<domain>4C6DBC40-12F6-557C-F207-6C5BA415E963</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="title" id="DAA92FB1-B126-D1AF-4D41-020A39F5DF61">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>2F3A0A8C-7FD9-B60D-0898-35FC05CEEA00</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="description" id="81CEEB66-657D-C21B-BA0B-DF9749361ACD">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>980EE2A6-257F-4D2D-2EBE-F45CA27D1B45</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="upload_date" id="9E4E024E-56D4-CB30-2E17-2E7FE4EE7ADB">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>8B354E60-49E5-DA51-B5F8-05C9D0B192B8</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<defaultValue>current_timestamp</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="duration" id="3C168744-610A-3897-41A7-8C8A4F7EAFBF">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>05F1248C-8551-D9E9-E1CE-689B492518C0</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="is_monetized" id="E32B6FDC-24C8-88C6-3627-F645A56500E2">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>BBFF514F-B800-8ABB-B80C-311B45CD6A28</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<defaultValue>1</defaultValue>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="is_deleted" id="05473154-8609-3CAF-93B2-6335210BC21F">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>03B4E82B-4DB6-1C30-67B4-891B95E9EB88</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F1B7FE79-023C-E897-7384-A792043CE8E4" name="z_video_PK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>FD243550-8E93-389E-831B-58B93FFD1A72</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5AB8EEF0-3488-B973-BC08-2B24AC352106"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D02A1C0D-1E08-A477-DC83-7B227F42FBE7" name="z_video__IDX">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>5BD384F5-5A1D-A98A-48C8-5960822656EB</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="29A3A02A-920B-CC99-37FF-2D2D34EF04B5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B0E36592-BE79-13BC-88AE-6683A822DB0C" name="z_video__IDXv1">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>0791F5B5-8C53-AE04-1EA2-52E3D0DB6166</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="78E0E840-DBFA-8061-B831-E803EA4EDAD5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E80487DE-8285-5803-A26B-E6409C7B575B" name="z_video_z_channel_FK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>FC328929-C96F-C8EA-D811-EB567301A8A4</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1F41AEDA-C72D-8F80-4260-75DC781F2678"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3E8477C1-10FE-DB15-35FB-8ECB6FC1A2FC" name="z_video_z_image_media_FK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>5BD384F5-5A1D-A98A-48C8-5960822656EB</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="29A3A02A-920B-CC99-37FF-2D2D34EF04B5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5EE0EB0B-F62E-08B7-F498-54C5C1B953A0" name="z_video_z_video_media_FK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>0791F5B5-8C53-AE04-1EA2-52E3D0DB6166</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="78E0E840-DBFA-8061-B831-E803EA4EDAD5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

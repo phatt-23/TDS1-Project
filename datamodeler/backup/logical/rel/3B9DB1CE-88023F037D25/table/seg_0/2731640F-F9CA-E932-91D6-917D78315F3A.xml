@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2731640F-F9CA-E932-91D6-917D78315F3A" name="z_video_category">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="video_id" id="701ADE16-E5E0-F145-2F50-35A9F16C7B57">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E0D72FA6-94A3-C69F-A603-3E849A418C43" referredColumn="642EB316-7955-F570-0330-41CBBDE147A8"/>
+</associations>
+</Column>
+<Column name="category_id" id="2E376640-D4CE-A5CB-F18C-1F18146A5CBC">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FCCE6371-0A5D-A54F-16A2-C72C96AAE1E4" referredColumn="9F71AE97-2332-ECBA-DA69-9B6CE11C990A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BE7A3C05-ABC7-AA88-8F31-CADF25E2CB80" name="z_video_category_PK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="701ADE16-E5E0-F145-2F50-35A9F16C7B57"/>
+<colUsage columnID="2E376640-D4CE-A5CB-F18C-1F18146A5CBC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1BB60196-F8CB-6DEE-34F5-2233E497BB19" name="z_video_category_z_video_FK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>DC504285-C98B-66FA-E573-91DB6EB01E5D</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="701ADE16-E5E0-F145-2F50-35A9F16C7B57"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D0ACC856-911B-490B-D62A-B8EFD870EB39" name="z_video_category_z_category_FK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>DC504285-C98B-66FA-E573-91DB6EB01E5D</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2E376640-D4CE-A5CB-F18C-1F18146A5CBC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

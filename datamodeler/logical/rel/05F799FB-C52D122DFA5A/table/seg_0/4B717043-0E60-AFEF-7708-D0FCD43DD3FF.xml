@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4B717043-0E60-AFEF-7708-D0FCD43DD3FF" name="z_video_view">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>15FC5352-369A-382F-C4D8-F72ABBEF2BAE</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="video_view_id" id="8F10B079-2A33-D65F-85B3-E4AE1E974D4A">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>CDA100AB-81B7-58C8-008F-0C760FB11281</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="user_id" id="697D4D94-7FF0-C686-73C4-D223A51402CE">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>49C4D0D9-1194-BD07-AB40-32051BA64C54</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<structuredType>47E390DE-0671-C4B1-8428-0F45CBEE18F8</structuredType>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="277B20C5-993D-AFC6-AFAD-C76F23143E80" referredColumn="6220FC30-F809-F7C9-65DE-507E550C4463"/>
+</associations>
+</Column>
+<Column name="view_date" id="564228D9-C23D-8377-7265-A823C225074C">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>14882537-0719-149F-E94B-7B9C32FAB8C9</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<defaultValue>current_timestamp</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="duration_watched" id="5071723F-94FE-E243-2A07-F5F2EA0EB80A">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>890614FC-2094-EB13-5891-46464E19F875</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="video_id" id="86D83C3B-0DDD-9FB2-01E5-0B318234F90E">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>D9F4E2A8-3CD1-D53B-4392-40F9CBB52F87</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B6298F71-5E0C-E106-4F8A-3487D293029C" referredColumn="5AB8EEF0-3488-B973-BC08-2B24AC352106"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="45449095-8CAF-F353-716D-5457CACEA47E" name="z_video_view_PK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>DEE77FEE-0B1C-F7C0-408F-514AF5A4461E</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8F10B079-2A33-D65F-85B3-E4AE1E974D4A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="61F0E01A-0356-CE7C-EB96-EC3B81B8758C" name="z_video_view_z_user_FK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>EEDB1A79-1814-9BE6-0167-E86C4BBD427C</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="697D4D94-7FF0-C686-73C4-D223A51402CE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E48B4A57-E827-6DF1-CF4A-3DE1913D97D8" name="z_video_view_z_video_FK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>80546938-AA88-BCE9-0A4F-E8EED7ECE5E7</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="86D83C3B-0DDD-9FB2-01E5-0B318234F90E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

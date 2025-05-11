@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="3D2A1B12-4E49-83C1-46AC-B409F244292E" containerWithKeyObject="BF6FE7C2-53A7-37A0-DA21-542A29E92682" localFKIndex="33B82027-16BC-255E-FAB7-6FD125187738" name="z_playlist_video_z_playlist_FK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>A0067EF9-F51B-9B9C-21EF-EFC08F8E6AF9</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<referredTableLongName>z_playlist</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D7F60E06-1B27-4BCC-5C12-417DAFD24B2F</referredTableID>
+<keyObject>DDF55DEB-0780-6698-C309-50DDFF1449E0</keyObject>
+<referredKeyID>DDF55DEB-0780-6698-C309-50DDFF1449E0</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>playlist_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

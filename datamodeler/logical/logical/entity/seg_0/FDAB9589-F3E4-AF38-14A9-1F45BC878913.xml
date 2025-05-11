@@ -1,0 +1,153 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="FDAB9589-F3E4-AF38-14A9-1F45BC878913" name="z_channel">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 10:19:31 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="61B715F7-C669-DCA2-BAAE-35FF7C088C55" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="channel_id" id="019C4601-629C-7C9A-FB83-33D28BFD9EE7">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 10:19:41 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="61B715F7-C669-DCA2-BAAE-35FF7C088C55" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="user_id" id="DAC12840-213E-0C11-EECB-81DA4A38AF98">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 11:43:01 UTC</createdTime>
+<generatorID>4FCE2CA5-F762-B580-30BF-B7E4493B02C9</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="61B715F7-C669-DCA2-BAAE-35FF7C088C55" value="true"/>
+</engineerTo>
+<referedAttribute>1B240F58-CD6B-8713-EB10-E5B658843DBE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<structuredType>47E390DE-0671-C4B1-8428-0F45CBEE18F8</structuredType>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="channel_name" id="B8F35CDD-6169-4A4B-BB65-184B8C4FABE0">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 10:20:17 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="61B715F7-C669-DCA2-BAAE-35FF7C088C55" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="description" id="787777BF-80DA-1045-4A95-20C3D11A1518">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 10:20:34 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="61B715F7-C669-DCA2-BAAE-35FF7C088C55" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>1000</dataTypeSize>
+<ownDataTypeParameters>1000,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="pfp_media_id" id="E456119B-819A-A633-AB8A-53EA7BC8EF7E">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 14:26:31 UTC</createdTime>
+<generatorID>3822CD44-8CE3-EEAE-12A8-A711B5CFF2DB</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="61B715F7-C669-DCA2-BAAE-35FF7C088C55" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>87A16F68-061E-F636-7CC2-2A4F6A5EB6BB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="banner_media_id" id="74AA5DF1-B160-8ED3-48D6-DE2FEC6F7D80">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 14:27:47 UTC</createdTime>
+<generatorID>E81F1C82-935C-716D-8B7E-AD3CB4D4ACC8</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="61B715F7-C669-DCA2-BAAE-35FF7C088C55" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>87A16F68-061E-F636-7CC2-2A4F6A5EB6BB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="creation_date" id="1C47C458-DDFB-D9C8-CBF7-3896DC5683BF">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 10:21:37 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="61B715F7-C669-DCA2-BAAE-35FF7C088C55" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<defaultValue>current_timestamp</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="is_deleted" id="E3DF0C5C-AE2A-19DF-3C56-FEBC91BFB091">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 10:22:28 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="61B715F7-C669-DCA2-BAAE-35FF7C088C55" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E6A20353-7F6E-36F8-EFF9-60C464AC6A51" name="z_channel PK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 10:19:54 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="61B715F7-C669-DCA2-BAAE-35FF7C088C55" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>019C4601-629C-7C9A-FB83-33D28BFD9EE7</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

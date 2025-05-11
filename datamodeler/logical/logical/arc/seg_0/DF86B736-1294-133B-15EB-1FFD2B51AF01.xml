@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Arc class="oracle.dbtools.crest.model.design.logical.Arc" directorySegmentName="seg_0" id="DF86B736-1294-133B-15EB-1FFD2B51AF01" name="PlaylistCreator">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 11:40:27 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="B81D65C3-4134-EC6A-CB7A-A51FF534B0AC" value="true"/>
+</engineerTo>
+<entity>5498F7DB-2989-6E44-24BF-E726346940E4</entity>
+<relations>
+<relationID>24FEC985-9A11-6D2A-84F2-19C4837C1159</relationID>
+<relationID>0D7A1153-9786-359C-3FA4-D755E8D8C21C</relationID>
+</relations>
+</Arc>

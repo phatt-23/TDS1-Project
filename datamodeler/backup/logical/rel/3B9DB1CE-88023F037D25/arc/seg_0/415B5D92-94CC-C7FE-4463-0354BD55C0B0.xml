@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKArc class="oracle.dbtools.crest.model.design.relational.FKArc" directorySegmentName="seg_0" id="415B5D92-94CC-C7FE-4463-0354BD55C0B0" name="Reaction_Target">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<mandatory>true</mandatory>
+<table>A2F0E08C-4E2E-A05D-0C9C-8BB560FDAEDA</table>
+<fkeys>
+<fkeyID>9214B070-03C6-0C15-359F-830948116513</fkeyID>
+<fkeyID>4C5AA27F-252B-B790-62F5-98103428B330</fkeyID>
+</fkeys>
+</FKArc>

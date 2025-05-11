@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="AFA39243-F9DB-5F0C-C31A-EC4D0DB192F0" containerWithKeyObject="60C6DDE6-AD15-7637-933A-936FB69DE243" localFKIndex="E7B6CF08-3AC0-58BA-49D0-F962ADBF41B2" name="z_video_category_z_category_FK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>DC504285-C98B-66FA-E573-91DB6EB01E5D</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<referredTableLongName>z_category</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>BCF9995F-8A62-1448-C030-E861F92BE4F8</referredTableID>
+<keyObject>E8CE82E3-DCCB-045A-55E6-2910FB32A4E0</keyObject>
+<referredKeyID>E8CE82E3-DCCB-045A-55E6-2910FB32A4E0</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>category_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

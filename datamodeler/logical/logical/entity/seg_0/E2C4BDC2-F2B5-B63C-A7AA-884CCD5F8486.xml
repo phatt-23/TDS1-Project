@@ -1,0 +1,122 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E2C4BDC2-F2B5-B63C-A7AA-884CCD5F8486" name="z_video_audit">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 13:40:50 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="BBF86C48-6C45-9FFF-6FE7-2A9C3278F395" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="audit_id" id="7C4A8361-33A5-B81E-58BE-1669F49E256E">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 13:41:01 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="BBF86C48-6C45-9FFF-6FE7-2A9C3278F395" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="video_id" id="AC1EDA0B-CEA3-120F-8D00-E3DAEB509495">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 13:42:25 UTC</createdTime>
+<generatorID>FD26F0D5-8ADA-AD57-85CE-54B0F0E60C5B</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="BBF86C48-6C45-9FFF-6FE7-2A9C3278F395" value="true"/>
+</engineerTo>
+<referedAttribute>1390BBC9-0873-D18F-FDAD-CA584D70ED18</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="field_changed" id="C657B177-5C09-1813-38CE-74F4633B4606">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 13:42:18 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="BBF86C48-6C45-9FFF-6FE7-2A9C3278F395" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="old_value" id="E26096C9-D17A-2175-E6FC-A24F2B1F3D18">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 13:42:18 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="BBF86C48-6C45-9FFF-6FE7-2A9C3278F395" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="new_value" id="BF8E6B2F-B2A5-AE16-0F64-2816E5BC95DB">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 13:42:18 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="BBF86C48-6C45-9FFF-6FE7-2A9C3278F395" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="change_at" id="CE804F80-9F26-A4A3-1A8D-F1E99F977C69">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 13:42:18 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="BBF86C48-6C45-9FFF-6FE7-2A9C3278F395" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<defaultValue>current_timestamp</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="3A3E0C9C-4D6A-1A9C-D902-5307A3F4B2C0" name="z_video_audit PK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 13:41:11 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="BBF86C48-6C45-9FFF-6FE7-2A9C3278F395" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>7C4A8361-33A5-B81E-58BE-1669F49E256E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

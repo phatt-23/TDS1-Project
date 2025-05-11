@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Video_Has_VideoFile" directorySegmentName="seg_0" id="0791F5B5-8C53-AE04-1EA2-52E3D0DB6166">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 14:34:43 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="B81D65C3-4134-EC6A-CB7A-A51FF534B0AC" value="true"/>
+</engineerTo>
+<sourceTransferable>false</sourceTransferable>
+<targetTransferable>false</targetTransferable>
+<sourcePk>CBE66070-5308-8F19-0215-E3473F7E9EEC</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>298CB5CC-7DFE-1021-4E33-35E5A3FC7E56</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>A88CEF6A-C6FF-BBD9-6962-B5CCBE42DE3C</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

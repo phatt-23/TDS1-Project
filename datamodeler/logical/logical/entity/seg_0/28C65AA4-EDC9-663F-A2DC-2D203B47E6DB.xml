@@ -1,0 +1,104 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="28C65AA4-EDC9-663F-A2DC-2D203B47E6DB" name="z_comment_audit">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 13:28:45 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="61B715F7-C669-DCA2-BAAE-35FF7C088C55" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="audit_id" id="D91EB327-28E7-DC48-F84B-89EEA438BE17">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 13:29:01 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="61B715F7-C669-DCA2-BAAE-35FF7C088C55" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="comment_id" id="0CC1270E-F2B2-3BE0-8D96-E8991647EB3B">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 13:31:03 UTC</createdTime>
+<generatorID>8374F53E-0CAE-BDD8-0CE9-42980A847F7B</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="61B715F7-C669-DCA2-BAAE-35FF7C088C55" value="true"/>
+</engineerTo>
+<referedAttribute>2993A9C7-91DE-691C-74F2-DF77DB7B8802</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="old_content" id="9B94032F-55E6-77DB-94DB-5B5E585D4B78">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 13:29:10 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="61B715F7-C669-DCA2-BAAE-35FF7C088C55" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="new_content" id="6850CB81-EEA9-E963-D8C8-8C64D9A7B005">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 13:29:37 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="61B715F7-C669-DCA2-BAAE-35FF7C088C55" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="change_at" id="3C70BF19-8B4D-998E-A2D7-F629F70B6C42">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 13:30:14 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="61B715F7-C669-DCA2-BAAE-35FF7C088C55" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="AABF0797-4294-5132-5577-6FF0919DFAE9" name="z_comment_audit PK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 13:29:09 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="61B715F7-C669-DCA2-BAAE-35FF7C088C55" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D91EB327-28E7-DC48-F84B-89EEA438BE17</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

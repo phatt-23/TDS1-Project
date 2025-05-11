@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="DA6105AD-4FEC-4DE9-C2E3-AAFCBAF08682" name="z_playlist_video">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:02:05 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="playlist_id" id="C72C906B-4498-3834-F2E7-EB50851E2630">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:03:09 UTC</createdTime>
+<generatorID>A0067EF9-F51B-9B9C-21EF-EFC08F8E6AF9</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+</engineerTo>
+<referedAttribute>A435D09D-3596-C008-67EF-17B39564B4B6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="added_date" id="EAB594B5-648D-C73C-1DE8-776A622C8AE3">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:02:19 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<defaultValue>current_timestamp</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="order" id="CF786180-8E16-0011-87AF-BF1A908BC7FE">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:02:29 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E26888A9-72C9-7B56-E948-655ACC9CFE26" name="z_playlist_video PK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:03:09 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C72C906B-4498-3834-F2E7-EB50851E2630</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

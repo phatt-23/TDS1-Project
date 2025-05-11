@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BCF9995F-8A62-1448-C030-E861F92BE4F8" name="z_category">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>A8B56440-784A-DBBE-147D-28D2E29BF634</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="category_id" id="D878A05E-BAC5-3FBA-8C3C-4A3E8ADB9EEF">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>F6164851-C899-6670-536A-BF09E45ADC36</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="parent_category_id" id="D747BA74-438D-8276-E3CD-F0C94F305884">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>4C0239E2-8346-24A4-0301-EDAB7686F937</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8818BCFA-9BF9-8E94-BF1A-0F0777D27F2F" referredColumn="D878A05E-BAC5-3FBA-8C3C-4A3E8ADB9EEF"/>
+</associations>
+</Column>
+<Column name="category_name" id="DE013C8C-5028-108D-3D29-81FDC87A51AD">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>F7ADC61A-EF65-C489-5181-52E0E4235540</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E8CE82E3-DCCB-045A-55E6-2910FB32A4E0" name="z_category_PK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>47F30AF6-DE01-34B7-6F52-EB393537EC36</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D878A05E-BAC5-3FBA-8C3C-4A3E8ADB9EEF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="56EC4088-525A-3187-918D-416FCE4932FF" name="z_category_z_category_FK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 14:15:21 UTC</createdTime>
+<generatorID>D4B8D7E4-89DC-2BA2-DAE8-E32B65A384E0</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D747BA74-438D-8276-E3CD-F0C94F305884"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

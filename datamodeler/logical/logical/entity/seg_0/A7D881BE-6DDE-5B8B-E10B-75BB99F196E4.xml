@@ -1,0 +1,139 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A7D881BE-6DDE-5B8B-E10B-75BB99F196E4" name="z_comment">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 13:44:47 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="ED5B5AAA-5529-57D9-B2BA-F47478B1E843" value="true"/>
+<item key="05F799FB-AF34-9E52-BAEF-C52D122DFA5A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="comment_id" id="2993A9C7-91DE-691C-74F2-DF77DB7B8802">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 13:44:54 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="ED5B5AAA-5529-57D9-B2BA-F47478B1E843" value="true"/>
+<item key="05F799FB-AF34-9E52-BAEF-C52D122DFA5A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="parent_comment_id" id="CC02DC94-6453-3F86-427C-A60C3FC1C60E">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 13:48:24 UTC</createdTime>
+<generatorID>DA3116D7-3387-5F97-AC2C-D3873E987CB7</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="ED5B5AAA-5529-57D9-B2BA-F47478B1E843" value="true"/>
+<item key="05F799FB-AF34-9E52-BAEF-C52D122DFA5A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>2993A9C7-91DE-691C-74F2-DF77DB7B8802</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="video_id" id="C70E65E8-D188-D2C2-7F72-397BAD8AACAC">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 22:27:04 UTC</createdTime>
+<generatorID>3C0C3842-9E3A-C537-4855-23C03EEF739F</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="ED5B5AAA-5529-57D9-B2BA-F47478B1E843" value="true"/>
+<item key="05F799FB-AF34-9E52-BAEF-C52D122DFA5A" value="true"/>
+</engineerTo>
+<referedAttribute>1390BBC9-0873-D18F-FDAD-CA584D70ED18</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="user_id" id="DF159F25-0F99-E51C-D2DC-87EC9AC9E0EC">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 13:50:47 UTC</createdTime>
+<generatorID>31AFBA0B-08A0-BE95-49E4-88CA7192002E</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="ED5B5AAA-5529-57D9-B2BA-F47478B1E843" value="true"/>
+<item key="05F799FB-AF34-9E52-BAEF-C52D122DFA5A" value="true"/>
+</engineerTo>
+<referedAttribute>1B240F58-CD6B-8713-EB10-E5B658843DBE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<structuredType>47E390DE-0671-C4B1-8428-0F45CBEE18F8</structuredType>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="content" id="CFA2992E-481B-F602-08B3-FB0BD1B15CA5">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 13:45:06 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="ED5B5AAA-5529-57D9-B2BA-F47478B1E843" value="true"/>
+<item key="05F799FB-AF34-9E52-BAEF-C52D122DFA5A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="comment_date" id="E2923E3B-675C-5C5E-AA3A-87B04C050A53">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 13:45:40 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="ED5B5AAA-5529-57D9-B2BA-F47478B1E843" value="true"/>
+<item key="05F799FB-AF34-9E52-BAEF-C52D122DFA5A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<defaultValue>current_timestamp</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="is_deleted" id="4AF6B7D5-04E6-65D8-7F95-A48A77972A2E">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 13:46:18 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="ED5B5AAA-5529-57D9-B2BA-F47478B1E843" value="true"/>
+<item key="05F799FB-AF34-9E52-BAEF-C52D122DFA5A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="FA67D59D-F441-F901-D391-FEAB8D2AD67D" name="z_comment PK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 13:45:01 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="ED5B5AAA-5529-57D9-B2BA-F47478B1E843" value="false"/>
+<item key="05F799FB-AF34-9E52-BAEF-C52D122DFA5A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>2993A9C7-91DE-691C-74F2-DF77DB7B8802</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Comment_Has_Reaction" directorySegmentName="seg_0" id="E5FAB9AF-F1F9-75E3-86F2-78681D841161">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 13:57:11 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="B81D65C3-4134-EC6A-CB7A-A51FF534B0AC" value="true"/>
+</engineerTo>
+<sourceTransferable>false</sourceTransferable>
+<targetTransferable>false</targetTransferable>
+<sourcePk>FA67D59D-F441-F901-D391-FEAB8D2AD67D</sourcePk>
+<arc>688F46EB-A2B3-A247-AE46-22C866A56448</arc>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>A7D881BE-6DDE-5B8B-E10B-75BB99F196E4</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>6BD37B36-34BD-0A63-566B-022D2CC5FAF8</targetEntity>
+<transferable>true</transferable>
+<deleteRule>CASCADE</deleteRule>
+</Relation>

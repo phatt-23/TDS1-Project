@@ -1,0 +1,104 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="84F3A143-31BE-981D-46E1-52039B586C84" name="z_subscription">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>29560BD1-C804-AEFA-C044-F48707F5EF41</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="user_id" id="7708C48B-EB88-D002-723C-EAB540744596">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>F5A0A11A-0C11-8060-80D8-60AE0BCE6B5C</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<structuredType>47E390DE-0671-C4B1-8428-0F45CBEE18F8</structuredType>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="875E0C1B-20E8-70BA-2D22-7C84DDA5A126" referredColumn="A2CAA7B9-7F3A-7DB2-0175-B4C5424ADCA1"/>
+</associations>
+</Column>
+<Column name="channel_id" id="134D256F-2DE6-884E-E493-27F9E00D4D3C">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>A7A34AF3-1926-1ED7-DC33-7117F8365040</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F94551FF-8B69-DF2A-7F78-5840B70103CF" referredColumn="F71D8299-AFFA-8179-C5E8-31A4BBF00C58"/>
+</associations>
+</Column>
+<Column name="notification_preference" id="13757454-1886-19EE-FFD0-46285E146669">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>49609F77-12DA-698F-5328-9E47DD42CD05</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<defaultValue>1</defaultValue>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="subscription_date" id="0D70275E-8D6C-3112-29AB-851F1C7DCBEE">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>5FBB7E2B-7A02-C99E-F800-85AF041290CD</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D959414A-C659-C0AD-85EA-992ADF1D758A" name="z_subscription_PK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>9532A568-A861-1E75-DF1A-3973DB5368B8</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7708C48B-EB88-D002-723C-EAB540744596"/>
+<colUsage columnID="134D256F-2DE6-884E-E493-27F9E00D4D3C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3A9EA0C1-83C2-0DE7-1654-9CF43EB9F558" name="z_subscription_z_channel_FK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>ECF279DD-1ED6-89D8-C0BA-0AEC6F0012C2</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="134D256F-2DE6-884E-E493-27F9E00D4D3C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="75326E85-EB1E-3B0C-FEC7-EF1E465BDBB9" name="z_subscription_z_user_FK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 16:59:09 UTC</createdTime>
+<generatorID>B3493D4D-80E7-0B2D-0F11-BBA9057A6F30</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7708C48B-EB88-D002-723C-EAB540744596"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

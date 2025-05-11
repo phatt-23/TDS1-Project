@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="User_OnChangeCreates_Audits" directorySegmentName="seg_0" id="9FBD8D3F-92F1-8C0A-D3CD-D31C2B430990">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-11 13:39:42 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="61B715F7-C669-DCA2-BAAE-35FF7C088C55" value="true"/>
+</engineerTo>
+<sourcePk>E6C03EB4-6707-8231-7E2C-D279D558AB6E</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>03246926-AA1E-94E0-645D-C2E379D6000F</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>6EF0A465-02CC-E85D-8711-D38B4FCB016E</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

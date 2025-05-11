@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="6BD37B36-34BD-0A63-566B-022D2CC5FAF8" name="z_reaction">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 13:53:46 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="reaction_id" id="51FEDF1D-748D-1341-4897-1C4041243B4E">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 13:53:54 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="reaction_kind" id="43180923-EA41-8B1A-ED46-A64024B104A4">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 13:59:41 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<domain>4B75E1DE-25AC-B34C-2871-D0A911F30B5C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="user_id" id="4EEA1BF5-5B84-7924-CCEE-2A5F602B864A">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 13:55:43 UTC</createdTime>
+<generatorID>DE021852-983B-7921-7E3C-1CAFFED2F9E1</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+</engineerTo>
+<referedAttribute>1B240F58-CD6B-8713-EB10-E5B658843DBE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<structuredType>47E390DE-0671-C4B1-8428-0F45CBEE18F8</structuredType>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="comment_id" id="CB91D88F-AE6A-EFE1-29BF-07E0047648E2">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 13:57:11 UTC</createdTime>
+<generatorID>E5FAB9AF-F1F9-75E3-86F2-78681D841161</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+</engineerTo>
+<referedAttribute>2993A9C7-91DE-691C-74F2-DF77DB7B8802</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="reaction_date" id="36FA96D9-4287-2EEE-4288-77F30D6F5E0B">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 13:54:31 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<defaultValue>current_timestamp</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="5F9911F5-5084-107E-15F4-F15BDF909998" name="z_reaction PK">
+<createdBy>phatt</createdBy>
+<createdTime>2025-05-10 13:53:59 UTC</createdTime>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>51FEDF1D-748D-1341-4897-1C4041243B4E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
