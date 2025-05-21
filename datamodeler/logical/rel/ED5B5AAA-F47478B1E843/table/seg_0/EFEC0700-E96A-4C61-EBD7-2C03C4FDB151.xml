@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EFEC0700-E96A-4C61-EBD7-2C03C4FDB151" name="z_video_media">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>298CB5CC-7DFE-1021-4E33-35E5A3FC7E56</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="media_id" id="A00424A6-192C-6D52-084A-F8099010174D">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>87A16F68-061E-F636-7CC2-2A4F6A5EB6BB</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B2CE8E75-6333-77D6-0079-6555C02194C7" referredColumn="C3CBB3AD-A5D9-BFB5-77AC-968A0F60C937"/>
+</associations>
+</Column>
+<Column name="duration" id="C5F25C9A-68AB-9D71-3898-9F9A306D1B20">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>E29C1E40-E70D-F0EB-A15E-2301BFA2C49B</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="resolution" id="68247806-7439-16BF-DCC1-F724C3557642">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>303C184C-C030-CD89-F72D-96C2EBE2FE0C</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>1A2CB3C3-FB3C-7C25-F158-9B7716E8492D</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9D2C7100-B897-C950-D5E7-1FA5414C5CDF" name="z_video_media_PK">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>CBE66070-5308-8F19-0215-E3473F7E9EEC</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A00424A6-192C-6D52-084A-F8099010174D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5F0DD940-1747-E19D-6881-7B8270EF49E9" name="z_video_media_z_media_FK">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>BF138D73-6BDD-447C-24A3-633F26739FE6</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A00424A6-192C-6D52-084A-F8099010174D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

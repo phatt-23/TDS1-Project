@@ -4,7 +4,8 @@
 <createdTime>2025-05-10 14:06:01 UTC</createdTime>
 <ownerDesignName>logical</ownerDesignName>
 <engineerTo>
-<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="ED5B5AAA-5529-57D9-B2BA-F47478B1E843" value="true"/>
+<item key="05F799FB-AF34-9E52-BAEF-C52D122DFA5A" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -20,7 +21,8 @@
 <createdTime>2025-05-10 14:06:08 UTC</createdTime>
 <ownerDesignName>logical</ownerDesignName>
 <engineerTo>
-<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="ED5B5AAA-5529-57D9-B2BA-F47478B1E843" value="true"/>
+<item key="05F799FB-AF34-9E52-BAEF-C52D122DFA5A" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -33,7 +35,8 @@
 <generatorID>EEDB1A79-1814-9BE6-0167-E86C4BBD427C</generatorID>
 <ownerDesignName>logical</ownerDesignName>
 <engineerTo>
-<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="ED5B5AAA-5529-57D9-B2BA-F47478B1E843" value="true"/>
+<item key="05F799FB-AF34-9E52-BAEF-C52D122DFA5A" value="true"/>
 </engineerTo>
 <referedAttribute>1B240F58-CD6B-8713-EB10-E5B658843DBE</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -47,7 +50,8 @@
 <createdTime>2025-05-10 14:06:34 UTC</createdTime>
 <ownerDesignName>logical</ownerDesignName>
 <engineerTo>
-<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="ED5B5AAA-5529-57D9-B2BA-F47478B1E843" value="true"/>
+<item key="05F799FB-AF34-9E52-BAEF-C52D122DFA5A" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -60,8 +64,24 @@
 <createdTime>2025-05-10 14:06:51 UTC</createdTime>
 <ownerDesignName>logical</ownerDesignName>
 <engineerTo>
-<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="ED5B5AAA-5529-57D9-B2BA-F47478B1E843" value="true"/>
+<item key="05F799FB-AF34-9E52-BAEF-C52D122DFA5A" value="true"/>
 </engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="video_id" id="6259E4A1-23F3-11AA-0ADA-96C8ADB8E6CF">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:11:03 UTC</createdTime>
+<generatorID>80546938-AA88-BCE9-0A4F-E8EED7ECE5E7</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="ED5B5AAA-5529-57D9-B2BA-F47478B1E843" value="true"/>
+<item key="05F799FB-AF34-9E52-BAEF-C52D122DFA5A" value="true"/>
+</engineerTo>
+<referedAttribute>1390BBC9-0873-D18F-FDAD-CA584D70ED18</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -74,7 +94,8 @@
 <createdTime>2025-05-10 14:06:09 UTC</createdTime>
 <ownerDesignName>logical</ownerDesignName>
 <engineerTo>
-<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="ED5B5AAA-5529-57D9-B2BA-F47478B1E843" value="true"/>
+<item key="05F799FB-AF34-9E52-BAEF-C52D122DFA5A" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C2F5FC8E-830C-C380-A626-72193D29B085" name="z_playlist_video">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>DA6105AD-4FEC-4DE9-C2E3-AAFCBAF08682</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="playlist_id" id="D34F6FB0-F78F-FED4-E44B-9992917486BD">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>C72C906B-4498-3834-F2E7-EB50851E2630</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AE37F9C7-9148-C21C-8714-6F7FE7A375C3" referredColumn="6D0D7589-6362-46CA-EBC0-80BA490FBEFB"/>
+</associations>
+</Column>
+<Column name="video_id" id="62742C3C-3B34-D043-041E-6276AE9C8694">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>BCDEB230-48B5-3153-5A98-82D57650A924</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EC709FF3-D5CC-1866-0463-5EFC88C6A599" referredColumn="91A614FD-E1E2-31F2-31C0-B1B3D20E4438"/>
+</associations>
+</Column>
+<Column name="added_date" id="D41E7A62-057F-72C1-F360-FFEEAD1D0CFA">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>EAB594B5-648D-C73C-1DE8-776A622C8AE3</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<defaultValue>current_timestamp</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="order" id="67533614-B97E-4795-0E5E-F2D32F9E7F7E">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>CF786180-8E16-0011-87AF-BF1A908BC7FE</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="57680763-53F2-A60F-1768-5B4296831797" name="z_playlist_video_PK">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>E26888A9-72C9-7B56-E948-655ACC9CFE26</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D34F6FB0-F78F-FED4-E44B-9992917486BD"/>
+<colUsage columnID="62742C3C-3B34-D043-041E-6276AE9C8694"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FB4C9B84-E467-E265-1BCD-FE92060BFA32" name="z_playlist_video_z_playlist_FK">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>A0067EF9-F51B-9B9C-21EF-EFC08F8E6AF9</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D34F6FB0-F78F-FED4-E44B-9992917486BD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2340A04D-57B1-BFB3-9B6D-A5D49DC0FE06" name="z_playlist_video_z_video_FK">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>20AFADA2-C32F-5380-835A-713E9FA79141</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="62742C3C-3B34-D043-041E-6276AE9C8694"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

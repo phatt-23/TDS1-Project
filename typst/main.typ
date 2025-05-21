@@ -11,28 +11,25 @@
 #set heading(numbering: "1.")
 
 // Raw Blocks
-#set raw(theme: "./theme/Material-Theme.tmTheme")
-#show raw: set text(font: "JetBrainsMono NF", size: 8pt)
+// #set raw(theme: "./theme/Material-Theme.tmTheme")
+// #set raw(theme: "./theme/Ciapre.tmTheme")
+#show raw: set text(font: "Iosevka NF", size: 10pt)
 #show raw.where(block: true): it => block(
-  inset: 8pt,
-  radius: 5pt,
+  inset: 4pt,
+  radius: 0pt,
   text(it),
   stroke: (
-    left: 2pt + luma(230),
+    left: 1pt + luma(200),
+    // right: 1pt + luma(200),
+    // top: 1pt + luma(200), 
+    // bottom: 1pt + luma(200),
   )
-)
-
-#show raw.where(block: false): box.with(
-  fill: luma(240),
-  inset: (x: 3pt, y: 0pt),
-  outset: (y: 3pt),
-  radius: 2pt,
 )
 
 // Font and Language
 #set text(
   lang: "en",
-  // font: "Latin Modern Mono",
+  font: "Latin Modern Sans",
   size: 11pt,
 )
 

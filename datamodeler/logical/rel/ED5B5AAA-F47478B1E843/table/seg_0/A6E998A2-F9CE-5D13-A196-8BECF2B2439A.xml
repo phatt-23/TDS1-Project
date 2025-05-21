@@ -1,0 +1,104 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A6E998A2-F9CE-5D13-A196-8BECF2B2439A" name="z_subscription">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>29560BD1-C804-AEFA-C044-F48707F5EF41</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="user_id" id="CFEF96E0-6538-36B3-8A5C-72147E3F99D0">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>F5A0A11A-0C11-8060-80D8-60AE0BCE6B5C</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<structuredType>47E390DE-0671-C4B1-8428-0F45CBEE18F8</structuredType>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B80D4C15-E180-CECC-BEDB-5189B00460CF" referredColumn="F3D06CB5-90C4-4A3F-F926-7D2F5CF8081F"/>
+</associations>
+</Column>
+<Column name="channel_id" id="CA3F1AA2-C19B-B2FA-15A6-27C86C37FC65">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>A7A34AF3-1926-1ED7-DC33-7117F8365040</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8A82596A-6FEA-B6C8-642D-07A2B6A47889" referredColumn="D794D2F8-4813-999A-0DF2-59BB27C20747"/>
+</associations>
+</Column>
+<Column name="notification_preference" id="DF25CBF5-9C35-63EA-E6E0-A4701AF2CC82">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>49609F77-12DA-698F-5328-9E47DD42CD05</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<defaultValue>1</defaultValue>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="subscription_date" id="1997F15B-A172-33B0-004C-656855B7ABC2">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>5FBB7E2B-7A02-C99E-F800-85AF041290CD</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A632AE6F-286B-E1DB-5EA3-FCD241BBAF61" name="z_subscription_PK">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>9532A568-A861-1E75-DF1A-3973DB5368B8</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CFEF96E0-6538-36B3-8A5C-72147E3F99D0"/>
+<colUsage columnID="CA3F1AA2-C19B-B2FA-15A6-27C86C37FC65"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EC9BF3B0-71FB-ECB2-656F-B17C82ACF5BC" name="z_subscription_z_channel_FK">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>ECF279DD-1ED6-89D8-C0BA-0AEC6F0012C2</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CA3F1AA2-C19B-B2FA-15A6-27C86C37FC65"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8F1E1F5D-93CE-70F6-02C0-54C09B7DC490" name="z_subscription_z_user_FK">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>B3493D4D-80E7-0B2D-0F11-BBA9057A6F30</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CFEF96E0-6538-36B3-8A5C-72147E3F99D0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

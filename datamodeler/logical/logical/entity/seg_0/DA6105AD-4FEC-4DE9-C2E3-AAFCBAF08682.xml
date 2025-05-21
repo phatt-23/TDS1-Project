@@ -4,7 +4,8 @@
 <createdTime>2025-05-10 16:02:05 UTC</createdTime>
 <ownerDesignName>logical</ownerDesignName>
 <engineerTo>
-<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="ED5B5AAA-5529-57D9-B2BA-F47478B1E843" value="true"/>
+<item key="05F799FB-AF34-9E52-BAEF-C52D122DFA5A" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -21,9 +22,25 @@
 <generatorID>A0067EF9-F51B-9B9C-21EF-EFC08F8E6AF9</generatorID>
 <ownerDesignName>logical</ownerDesignName>
 <engineerTo>
-<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="ED5B5AAA-5529-57D9-B2BA-F47478B1E843" value="true"/>
+<item key="05F799FB-AF34-9E52-BAEF-C52D122DFA5A" value="true"/>
 </engineerTo>
 <referedAttribute>A435D09D-3596-C008-67EF-17B39564B4B6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="video_id" id="F722797E-DE59-E1B5-E5F5-7AF87CC15235">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:31:43 UTC</createdTime>
+<generatorID>05A84F32-687B-7809-27B4-EF82A20D1F16</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<engineerTo>
+<item key="ED5B5AAA-5529-57D9-B2BA-F47478B1E843" value="true"/>
+<item key="05F799FB-AF34-9E52-BAEF-C52D122DFA5A" value="true"/>
+</engineerTo>
+<referedAttribute>1390BBC9-0873-D18F-FDAD-CA584D70ED18</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -34,7 +51,8 @@
 <createdTime>2025-05-10 16:02:19 UTC</createdTime>
 <ownerDesignName>logical</ownerDesignName>
 <engineerTo>
-<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="ED5B5AAA-5529-57D9-B2BA-F47478B1E843" value="true"/>
+<item key="05F799FB-AF34-9E52-BAEF-C52D122DFA5A" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -47,7 +65,8 @@
 <createdTime>2025-05-10 16:02:29 UTC</createdTime>
 <ownerDesignName>logical</ownerDesignName>
 <engineerTo>
-<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="ED5B5AAA-5529-57D9-B2BA-F47478B1E843" value="true"/>
+<item key="05F799FB-AF34-9E52-BAEF-C52D122DFA5A" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -60,12 +79,16 @@
 <createdBy>phatt</createdBy>
 <createdTime>2025-05-10 16:03:09 UTC</createdTime>
 <ownerDesignName>logical</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="3B9DB1CE-837B-619C-5DA0-88023F037D25" value="true"/>
+<item key="ED5B5AAA-5529-57D9-B2BA-F47478B1E843" value="false"/>
+<item key="05F799FB-AF34-9E52-BAEF-C52D122DFA5A" value="true"/>
 </engineerTo>
 <pk>true</pk>
+<newElementsIDs>A0067EF9-F51B-9B9C-21EF-EFC08F8E6AF9,05A84F32-687B-7809-27B4-EF82A20D1F16</newElementsIDs>
 <usedAttributes>
 <attributeRef>C72C906B-4498-3834-F2E7-EB50851E2630</attributeRef>
+<attributeRef>F722797E-DE59-E1B5-E5F5-7AF87CC15235</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

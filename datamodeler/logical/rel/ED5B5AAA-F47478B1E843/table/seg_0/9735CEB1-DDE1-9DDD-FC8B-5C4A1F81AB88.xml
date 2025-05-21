@@ -1,0 +1,154 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9735CEB1-DDE1-9DDD-FC8B-5C4A1F81AB88" name="z_comment">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>A7D881BE-6DDE-5B8B-E10B-75BB99F196E4</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="comment_id" id="2667F866-5ECA-77D9-6773-BAF1EC03EBEC">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>2993A9C7-91DE-691C-74F2-DF77DB7B8802</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="parent_comment_id" id="ED4B2616-E253-E434-8382-F3E61A4CAAA4">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>CC02DC94-6453-3F86-427C-A60C3FC1C60E</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B9D2FD48-A107-C759-2B1A-5CBB0340598E" referredColumn="2667F866-5ECA-77D9-6773-BAF1EC03EBEC"/>
+</associations>
+</Column>
+<Column name="video_id" id="5658986E-B268-E1E3-AF7B-9460EEEF1FDB">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>C70E65E8-D188-D2C2-7F72-397BAD8AACAC</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2E183919-FA67-3E51-6619-D0EFF3A2DB46" referredColumn="91A614FD-E1E2-31F2-31C0-B1B3D20E4438"/>
+</associations>
+</Column>
+<Column name="user_id" id="9E4AF230-9153-26AA-BA61-74FA9CAF2C35">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>DF159F25-0F99-E51C-D2DC-87EC9AC9E0EC</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<structuredType>47E390DE-0671-C4B1-8428-0F45CBEE18F8</structuredType>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1D704D1E-518C-E133-88BB-7E12B79B6EB5" referredColumn="F3D06CB5-90C4-4A3F-F926-7D2F5CF8081F"/>
+</associations>
+</Column>
+<Column name="content" id="9A00574E-0554-7E88-AFB2-B70D7A9AFC16">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>CFA2992E-481B-F602-08B3-FB0BD1B15CA5</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="comment_date" id="10BF284D-5EBE-F53D-13D4-0FCA229558D2">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>E2923E3B-675C-5C5E-AA3A-87B04C050A53</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<defaultValue>current_timestamp</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="is_deleted" id="FB278802-BD47-0F8E-80C3-7E18B6D1C598">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>4AF6B7D5-04E6-65D8-7F95-A48A77972A2E</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C1DAE5DE-16B6-4EE0-207F-1FF0B830356B" name="z_comment_PK">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>FA67D59D-F441-F901-D391-FEAB8D2AD67D</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2667F866-5ECA-77D9-6773-BAF1EC03EBEC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C626D08C-7984-CF6E-0B5D-BF5FD3B98E8A" name="z_comment_z_comment_FK">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>DA3116D7-3387-5F97-AC2C-D3873E987CB7</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ED4B2616-E253-E434-8382-F3E61A4CAAA4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AD510E04-AA3D-D33E-FBFE-3CBE581CE493" name="z_comment_z_user_FK">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>31AFBA0B-08A0-BE95-49E4-88CA7192002E</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9E4AF230-9153-26AA-BA61-74FA9CAF2C35"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ED91E8AF-03DB-B028-0550-F39C8C54FF19" name="z_comment_z_video_FK">
+<createdBy>root</createdBy>
+<createdTime>2025-05-20 19:27:01 UTC</createdTime>
+<generatorID>3C0C3842-9E3A-C537-4855-23C03EEF739F</generatorID>
+<ownerDesignName>logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5658986E-B268-E1E3-AF7B-9460EEEF1FDB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
