@@ -7,7 +7,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="z_video_category_z_video_FK" id="6817A5AF-0531-91F9-3498-CD247BB6E144">
+<Column name="video_id" id="6817A5AF-0531-91F9-3498-CD247BB6E144">
 <createdBy>root</createdBy>
 <createdTime>2025-05-20 19:27:01 UTC</createdTime>
 <ownerDesignName>logical</ownerDesignName>
@@ -21,7 +21,7 @@
 <colAssociation fkAssociation="E7DB672A-4EA7-9931-BD87-F8F2F81ACA7B" referredColumn="91A614FD-E1E2-31F2-31C0-B1B3D20E4438"/>
 </associations>
 </Column>
-<Column name="z_video_category_z_category_FK" id="163C3051-1D65-4248-BD9A-21E5A258C0ED">
+<Column name="category_id" id="163C3051-1D65-4248-BD9A-21E5A258C0ED">
 <createdBy>root</createdBy>
 <createdTime>2025-05-20 19:27:01 UTC</createdTime>
 <ownerDesignName>logical</ownerDesignName>

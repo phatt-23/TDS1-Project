@@ -5,7 +5,7 @@
 <generatorID>DE021852-983B-7921-7E3C-1CAFFED2F9E1</generatorID>
 <ownerDesignName>logical</ownerDesignName>
 <referredTableLongName>z_user</referredTableLongName>
-<deleteRule>NO ACTION</deleteRule>
+<deleteRule>CASCADE</deleteRule>
 <referredTableID>90FB295E-AEC1-4432-25F7-71A2BA767900</referredTableID>
 <keyObject>E1E99538-3BFC-F22B-26B9-C836291CA83D</keyObject>
 <referredKeyID>E1E99538-3BFC-F22B-26B9-C836291CA83D</referredKeyID>

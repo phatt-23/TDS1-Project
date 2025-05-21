@@ -1,5 +1,7 @@
 = Database Design
 
+#v(2em)
+
 == DD S01 L02
 _Explain the difference between the concept of data and information._
 
@@ -26,47 +28,69 @@ _Entities, instances, attributes and identifiers -- describe in examples on your
   instance from another. Example: user_id is the primary key of z_user,
   uniquely identifying each user.
 
-#align(bottom)[
+#pagebreak()
+
 == DD S03 L01
 - _Describe all relations in your database in English, including cardinality
   and membership obligation - each relation in two sentences._
-]
+
+#set text(size: 7.27pt)
 
 #figure([
+
+  // See the strokes section for details on this!
+  #let frame(stroke) = (x, y) => (
+    left: if x > 0 { 0.1pt } else { 0.5pt },
+    right: 0.5pt,
+    top: if y < 2 { 0.5pt } else { 0.1pt },
+    bottom: 0.5pt,
+  )
+
+  #set table(
+    fill: (_, y) => if calc.odd(y) { rgb("EAF2F5") },
+    stroke: frame(rgb("21222C")),
+  )
+
   #table(
-    columns: (auto, auto, auto, auto),
-    inset: 10pt,
+    columns: (auto, auto, auto, auto, auto),
+    inset: 4pt,
     align: left,
     table.header(
-      [*Name*], [*Source*], [*Cardinality \ Optionality*], [*Target*]
+      [*Name*], [*Source*], [*Cardinality \ Optionality*], [*Target*], [*Description*]
     ),
-    "Category_Has_SubCategories", "z_category", "0..* : 0..1", "z_category",
-    "Channel_Has_BannerImage", "z_media_image", "0..* : 0..1", "z_channel",
-    "Channel_Has_Playlists", "z_channel", "0..* : 0..1", "z_playlist",
-    "Channel_Has_ProfileImage", "z_image_media", "0..* : 0..1", "z_channel",
-    "Channel_Has_Subscriptions", "z_channel", "0..* : 1..1", "z_subscription",
-    "Channel_Has_Videos", "z_channel", "0..* : 1..1", "z_video",
-    "Comment_Has_Reaction", "z_comment", "0..* : 1..1", "z_reaction",
-    "Comment_Has_SubComment", "z_comment", "0..* : 0..1", "z_comment",
-    "Playlist_Has_Videos", "z_playlist", "0..* : 1..1", "z_playlist_video",
-    "User_Has_Channels", "z_user", "0..* : 1..1", "z_channel",
-    "User_Has_Comments", "z_user", "0..* : 1..1", "z_comment",
-    "User_Has_Playlists", "z_user", "0..* : 0..1", "z_playlist",
-    "User_Has_ProfileImage", "z_image_media", "0..* : 0..1", "z_user",
-    "User_Has_Reactions", "z_user", "0..* : 1..1", "z_reaction",
-    "User_Has_Subscriptions", "z_user", "0..* : 1..1", "z_subscription",
-    "User_Has_VideoViews", "z_user", "0..* : 1..1", "z_video_view",
-    "Video_Has_Comments", "z_video", "0..* : 1..1", "z_comment",
-    "Video_Has_Reactions", "z_video", "0..* : 1..1", "z_reaction",
-    "Video_Has_ThumbnailImage", "z_image_media", "0..1 : 1..1", "z_video",
-    "Video_Has_VideoFile", "z_video_media", "0..1 : 1..1", "z_video",
-    "Video_Has_VideoViews", "z_video", "0..* : 1..1", "z_video_view",
-    "Video_IsIn_Playlists", "z_video", "0..* : 1..1", "z_playlist_video",
-    "z_video_category", "z_video", "0..* : 0..*", "z_category"
+    "Category_Has_SubCategories", "z_category", "1..1 : 0..*", "z_category",  "subcategory must refer to parent category, category can have many subcategories",
+    "Channel_Has_BannerImage", "z_channel", "0..* : 0..1", "z_image_media",   "more channels can have the same banner image, channels can have a banner image",
+    "Channel_Has_Playlists", "z_channel", "0..1 : 0..*", "z_playlist",  "playlist belongs to user, user can have many playlists",
+    "Channel_Has_ProfileImage", "z_channel", "0..* : 0..1", "z_image_media",  "channel can have a profile image, image can be used as profile image by many channels",
+    "Channel_Has_Subscriptions", "z_channel", "1..1 : 0..*", "z_subscription",  "subscriptions must refer to channel they target, channels can have many subscriptions",
+    "Channel_Has_Videos", "z_channel", "1..1 : 0..*", "z_video",  "videos must refer to channel they belong to, channel can have many videos",
+    "Comment_Has_Reaction", "z_comment", "1..1 : 0..*", "z_reaction", "reaction must refer to comment it reacted to, comment can have many reactions",
+    "Comment_Has_SubComment", "z_comment", "1..1 : 0..*", "z_comment",  "subcomment must refer to parent comment, comment can have many subcomments",
+    "Playlist_Has_Videos", "z_playlist", "1..1 : 0..*", "z_playlist_video",  "playlist_video must refer to playlist it's in, playlist can have many playlist_videos",
+    "User_Has_Channels", "z_user", "1..1 : 0..*", "z_channel",  "channel must refer to user it belongs to, user can have many channels",
+    "User_Has_Comments", "z_user", "1..1 : 0..*", "z_comment",  "comment must refer to user it was written by, user can write many comments",
+    "User_Has_Playlists", "z_user", "1..1 : 0..*", "z_playlist",  "user can have many playlists, playlist must refer to user",
+    "User_Has_ProfileImage", "z_user", "0..* : 0..1", "z_image_media",  "image can be used as profile image by many users, user can have a profile image",
+    "User_Has_Reactions", "z_user", "1..1 : 0..*", "z_reaction",  "reaction must refer to user, user can make make reactions",
+    "User_Has_Subscriptions", "z_user", "1..1 : 0..*", "z_subscription",  "subscriptions must refer to a user, user can have many subscriptions",
+    "User_Has_VideoViews", "z_user", "1..1 : 0..*", "z_video_view",  "video view must refer to user, user can make many video views",
+    "Video_Has_Comments", "z_video", "1..1 : 0..*", "z_comment",  "comment must refer to exactly one video, video can have many comments",
+    "Video_Has_Reactions", "z_video", "1..1 : 0..*", "z_reaction",  "reaction must refer to exactly one video, video can have many reactions",
+    "Video_Has_ThumbnailImage", "z_video", "0..* : 1..1", "z_image_media",  "video must have a thumbnail, images can be thumbnails of many videos",
+    "Video_Has_VideoFile", "z_video", "0..1 : 1..1", "z_video_media",  "video must have exactly one video file, video file can be the content of many videos",
+    "Video_Has_VideoViews", "z_video", "1..1 : 0..*", "z_video_view",  "video view must refer to video, videos can have many views",
+    "Video_IsIn_Playlists", "z_video", "1..1 : 0..*", "z_playlist_video",  "playlist_video must refer to the video, video can be many playlist_videos",
+    "z_video_category", "z_video", "0..* : 0..*", "z_category",  "video can have many categories, categories can refer to many videos",
+    "User_OnChangeCreates_Audits", "z_user", "1..1 : 0..*", "z_user_audit",  "user audit must refer to a user, user can have many audits",
+    "Comment_OnChangeCreates_Audits", "z_comment", "1..1 : 0..*", "z_comment_audit",  "comment audit must refer to a comment, comment can have many audits",
+    "Video_OnChangeCreates_Audits", "z_video", "1..1 : 0..*", "z_video_audit",  "video audits must refer to a video, video can have many audits",
   )
 ], caption: [Relations with cardinality and optionality]
 )
 
+#set text(size: 11pt)
+
+#pagebreak()
 
 == DD S03 L02
 _Draw an ER diagram according to conventions._
@@ -286,12 +310,12 @@ CREATE OR REPLACE TRIGGER trg_user_change
 BEGIN
   IF :OLD.email != :NEW.email THEN
     INSERT INTO z_user_audit(user_id, field_changed, old_value, new_value, change_date)
-    VALUES (:OLD.user_id, 'email', :OLD.email, :NEW.email, CURRENT_TIMESTAMP);
+    VALUES (:OLD.user_id, 'email', :OLD.email, :NEW.email);
   END IF;
 
   IF :OLD.first_name != :NEW.first_name THEN
     INSERT INTO z_user_audit(user_id, field_changed, old_value, new_value, change_date)
-    VALUES (:OLD.user_id, 'first_name', :OLD.first_name, :NEW.first_name, CURRENT_TIMESTAMP);
+    VALUES (:OLD.user_id, 'first_name', :OLD.first_name, :NEW.first_name);
   END IF;
 
   ... -- other attributes
@@ -399,7 +423,7 @@ _Generate a relational schema from your conceptual model and note the changes th
 have occurred in the schema and why._
 
 #figure(
-  image("../assets/Relational_2.svg"),
+  image("../assets/Relational.svg"),
   caption: [ER Diagram]
 )
 
@@ -415,9 +439,11 @@ have occurred in the schema and why._
 _Write query for concatenate strings by pipes || , and CONCAT(). Write query with SELECT DISTINCT._
 
 ```sql
-SELECT DISTINCT first_name || ' ' || last_name AS full_name FROM z_user;
+SELECT DISTINCT first_name || ' ' || last_name AS full_name 
+FROM z_user;
 
-SELECT DISTINCT CONCAT(first_name, CONCAT(' ', last_name)) AS full_name FROM z_user;
+SELECT DISTINCT CONCAT(first_name, CONCAT(' ', last_name)) AS full_name 
+FROM z_user;
 ```
 
 

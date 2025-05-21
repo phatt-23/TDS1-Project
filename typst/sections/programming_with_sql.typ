@@ -10,9 +10,9 @@
 ```sql
 -- LOWER, UPPER, INITCAP
 SELECT
-  LOWER('HeLLo WorlD') AS lower,
-  UPPER('HeLLo WorlD') AS upper,
-  INITCAP('heLLo worLD') AS initcap
+    LOWER('HeLLo WorlD') AS lower,
+    UPPER('HeLLo WorlD') AS upper,
+    INITCAP('heLLo worLD') AS initcap
 FROM dual;
 
 -- CONCAT, SUBSTR, LENGTH, INSTR
@@ -54,8 +54,7 @@ SELECT
 FROM dual;
 
 -- MOD to get remainder
-SELECT
-    MOD(17, 5) AS remainder               -- 2
+SELECT MOD(17, 5) AS remainder  -- 2
 FROM dual;
 ```
 
@@ -110,10 +109,10 @@ FROM dual;
 ```sql
 -- DECODE, CASE, IF-THEN-ELSE equivalent (only CASE is SQL standard)
 SELECT
-    DECODE(2,           -- expr switch
-            1, 'one',   --  expr1 => 'one'
-            2, 'two',   --  expr2 => 'two'
-            'other'     --  _ => 'other'
+    DECODE(2,           -- expr switch:
+        1, 'one',       --   expr1 => 'one'
+        2, 'two',       --   expr2 => 'two'
+           'other'      --   _ => 'other'
     ) AS decode_example,
     CASE 3
         WHEN 1 THEN 'one'
@@ -128,8 +127,13 @@ FROM dual;
 - NATURAL JOIN, CROSS JOIN
 
 ```sql
-SELECT * FROM z_user NATURAL JOIN z_playlist;   -- joins by common column names
-SELECT * FROM z_user CROSS JOIN z_channel;  -- cartesian product, can't specify join clause
+SELECT * 
+FROM z_user 
+NATURAL JOIN z_playlist;   -- joins by common column names
+
+SELECT * 
+FROM z_user 
+CROSS JOIN z_channel;  -- cartesian product, can't specify join clause
 ```
 
 == SQL S03 L02
@@ -141,7 +145,9 @@ SELECT *
 FROM z_video_view 
 JOIN z_video USING(video_id);    -- USING(column1, column2, ...)
 
-SELECT * FROM z_video_view JOIN z_video ON (z_video_view.video_id = z_video.video_id);
+SELECT * 
+FROM z_video_view 
+JOIN z_video ON (z_video_view.video_id = z_video.video_id);
 ```
 
 == SQL S03 L03
@@ -150,11 +156,17 @@ SELECT * FROM z_video_view JOIN z_video ON (z_video_view.video_id = z_video.vide
 - FULL OUTER JOIN ... ON ()
 
 ```sql
-SELECT * FROM z_video v LEFT OUTER JOIN z_video_view vv ON v.video_id = vv.video_id;
+SELECT * FROM z_video v LEFT OUTER JOIN z_video_view vv USING(video_id);
 -- same as
-SELECT * FROM z_video v LEFT JOIN z_video_view vv ON v.video_id = vv.video_id;
-SELECT * FROM z_video v RIGHT OUTER JOIN z_video_view vv ON v.video_id = vv.video_id;
-SELECT * FROM z_video v FULL OUTER JOIN z_video_view vv ON v.video_id = vv.video_id;
+SELECT * FROM z_video v LEFT JOIN z_video_view vv USING(video_id);
+
+SELECT * FROM z_video v RIGHT OUTER JOIN z_video_view vv USING(video_id);
+
+SELECT * FROM z_video v FULL OUTER JOIN z_video_view vv USING(video_id);
+-- same as
+SELECT * FROM z_video v LEFT OUTER JOIN z_video_view vv USING(video_id)
+UNION
+SELECT * FROM z_video v RIGHT OUTER JOIN z_video_view vv USING(video_id);
 ```
 
 #pagebreak()
@@ -165,8 +177,27 @@ SELECT * FROM z_video v FULL OUTER JOIN z_video_view vv ON v.video_id = vv.video
 
 
 ```sql
-SELECT * FROM z_comment;
+-- Self-join to link parent/child comments
+SELECT 
+    a.comment_id AS parent_id,
+    b.comment_id AS child_id
+FROM z_comment a
+JOIN z_comment b ON a.comment_id = b.parent_comment_id;
 
+-- Hierarchical query for comment tree
+SELECT 
+    LEVEL, 
+    comment_id, 
+    parent_comment_id, 
+    content
+FROM z_comment
+START WITH parent_comment_id IS NULL
+CONNECT BY PRIOR comment_id = parent_comment_id;
+```
+
+#pagebreak()
+
+```sql
 DECLARE
     v_parent_comment_id INT := 12;
     v_user_id INT := 12;
@@ -182,22 +213,6 @@ BEGIN
         );
     END LOOP;
 END;
-```
-
-#pagebreak()
-
-```sql
--- Self-join to link parent/child comments
-SELECT a.comment_id AS parent_id,
-       b.comment_id AS child_id
-FROM z_comment a
-JOIN z_comment b ON a.comment_id = b.parent_comment_id;
-
--- Hierarchical query for comment tree
-SELECT LEVEL, comment_id, parent_comment_id, content
-FROM z_comment
-START WITH parent_comment_id IS NULL
-CONNECT BY PRIOR comment_id = parent_comment_id;
 
 DECLARE
     v_level INT := 0;
@@ -206,7 +221,11 @@ DECLARE
     v_content Z_COMMENT.content%TYPE := '';
 BEGIN
     FOR v_rec IN (
-        SELECT LEVEL, comment_id, parent_comment_id, content
+        SELECT 
+            LEVEL, 
+            comment_id, 
+            parent_comment_id, 
+            content
         FROM z_comment
         START WITH parent_comment_id IS NULL
         CONNECT BY PRIOR comment_id = parent_comment_id
@@ -219,6 +238,8 @@ BEGIN
     END LOOP;
 END;
 ```
+
+
 
 #pagebreak()
 
@@ -236,36 +257,33 @@ END;
 
 WITH t_video_view AS (
     SELECT
-        v.video_id AS video_id,
-        v.duration AS duration,
-        COUNT(vv.video_view_id) AS view_count
-    FROM z_video v
-    JOIN z_video_view vv ON v.video_id = vv.video_id
-    GROUP BY v.video_id, v.duration
+        video_id AS video_id,
+        duration AS duration,
+        COUNT(video_view_id) AS view_count
+    FROM z_video JOIN z_video_view USING(video_id)
+    GROUP BY video_id, duration
 ), t_reaction_count AS (
-    SELECT (
-        SELECT COUNT(*) FROM z_reaction
-        WHERE video_id = v.video_id AND reaction_kind = 'like'
-    ) AS like_count,
-    (
-       SELECT COUNT(*) FROM z_reaction
-       WHERE video_id = v.video_id AND reaction_kind = 'like'
-    ) AS dislike_count
+    SELECT
+        (SELECT COUNT(*) FROM z_reaction r
+         WHERE r.video_id = v.video_id AND reaction_kind = 'like') AS like_count,
+        (SELECT COUNT(*) FROM z_reaction r
+         WHERE r.video_id = v.video_id AND reaction_kind = 'dislike') AS dislike_count
     FROM z_video v
 )
 SELECT
-    AVG(view_count),
     COUNT(*),
+    AVG(view_count),
     MIN(duration),
     MAX(duration),
     SUM(like_count),
     AVG(dislike_count),
-    VARIANCE(dislike_count),  -- Var(X) = E((X - mean) ** 2)
-    SQRT(VARIANCE(dislike_count)) AS standard_deviation,
+    VARIANCE(dislike_count),  -- Var(X) := E((X - mean) ** 2)
+    SQRT(VARIANCE(dislike_count)) AS standard_deviation,  -- StdDev(X) := sqrt2(Var(X))
     STDDEV(dislike_count)
 FROM t_video_view, t_reaction_count;
 ```
 
+#pagebreak()
 
 == SQL S04 L03
 - COUNT, COUNT(DISTINCT), NVL
@@ -273,13 +291,19 @@ FROM t_video_view, t_reaction_count;
 - Why using NVL for aggregation functions
 
 ```sql
-SELECT COUNT(*) FROM z_video;
-SELECT COUNT(thumbnail_media_id) FROM z_video;
-SELECT COUNT(DISTINCT visibility) FROM z_video;
+SELECT 
+    COUNT(*),
+    COUNT(thumbnail_media_id),
+    COUNT(DISTINCT visibility) 
+FROM z_video;
+
 
 WITH t AS (
-    SELECT v.video_id AS video_id, NULLIF(COUNT(VIDEO_VIEW_ID), 0) AS view_count
-    FROM z_video v LEFT JOIN z_video_view vv ON v.video_id = vv.video_id
+    SELECT 
+        v.video_id AS video_id, 
+        NULLIF(COUNT(VIDEO_VIEW_ID), 0) AS view_count
+    FROM z_video v 
+    LEFT JOIN z_video_view vv ON v.video_id = vv.video_id
     GROUP BY v.video_id
 )
 SELECT
@@ -294,13 +318,18 @@ FROM t;
 - HAVING
 
 ```sql
-SELECT channel_id, COUNT(*) AS total_videos
+SELECT 
+    channel_id, 
+    COUNT(*) AS total_videos
 FROM z_video
 GROUP BY channel_id;
 
-SELECT channel_id, COUNT(*) AS total_videos
+SELECT 
+    channel_id, 
+    COUNT(*) AS total_videos
 FROM z_video
-GROUP BY channel_id HAVING COUNT(*) > 1;
+GROUP BY channel_id 
+HAVING COUNT(*) > 1;
 ```
 
 #pagebreak()
@@ -309,18 +338,127 @@ GROUP BY channel_id HAVING COUNT(*) > 1;
 - ROLLUP, CUBE, GROUPING SETS
 
 ```sql
-SELECT channel_id, visibility, COUNT(*)
+-- GROUPING SETS
+SELECT
+    channel_id,
+    visibility AS video_visibility,
+    COUNT(*) AS video_count
 FROM z_video
-GROUP BY ROLLUP(channel_id, visibility);
+GROUP BY GROUPING SETS (
+    (channel_id),
+    (visibility)
+);
 
-SELECT channel_id, visibility, COUNT(*)
+-- equivalent to: (using UNION is much more inefficient)
+SELECT
+    channel_id,
+    NULL AS video_visibility,
+    COUNT(*) AS video_count
 FROM z_video
-GROUP BY CUBE(channel_id, visibility);
+GROUP BY channel_id
 
-SELECT channel_id, visibility, COUNT(*)
+UNION ALL
+
+SELECT
+    NULL AS channel_id,
+    visibility AS video_visibility,
+    COUNT(*) AS video_count
 FROM z_video
-GROUP BY GROUPING SETS ((channel_id), (visibility));
+GROUP BY visibility;
 ```
+
+#pagebreak()
+
+```sql
+-- GROUP BY CUBE
+-- every combination, resulting in 2 ** n grouping sets
+-- where n is number of columns in the cube list
+SELECT channel_id,
+       visibility AS video_visibility,
+       COUNT(*) AS video_count
+FROM z_video
+GROUP BY CUBE(channel_id, visibility)
+ORDER BY channel_id, video_visibility, video_count NULLS LAST;
+
+-- is equivalent to this:
+SELECT *
+FROM (
+    SELECT NULL AS channel_id,
+           NULL AS video_visibility,
+           COUNT(*) AS video_count
+    FROM z_video
+
+    UNION ALL
+
+    SELECT channel_id AS channel_id,
+           NULL AS video_visibility,
+           COUNT(*) AS video_count
+    FROM z_video
+    GROUP BY channel_id
+
+    UNION ALL
+
+    SELECT NULL AS channel_id,
+           visibility AS video_visibility,
+           COUNT(*) AS video_count
+    FROM z_video
+    GROUP BY visibility
+
+    UNION ALL
+
+    SELECT channel_id AS channel_id,
+           visibility AS video_visibility,
+           COUNT(*) AS video_count
+    FROM z_video
+    GROUP BY channel_id, visibility
+)
+ORDER BY channel_id, video_visibility, video_count NULLS FIRST;
+```
+
+#pagebreak()
+
+```sql
+-- GROUP BY ROLLUP
+SELECT
+    channel_id,
+    visibility AS video_visibility,
+    COUNT(*) AS video_count
+FROM z_video
+GROUP BY ROLLUP(channel_id, visibility)
+ORDER BY channel_id, video_visibility, video_count NULLS FIRST;
+-- group by channel_id, visibility
+-- with hierarchical subtotals per group and grand total being the sum of all subtotals
+
+-- equivalent to this:
+SELECT * FROM (
+    SELECT
+        channel_id AS channel_id,
+        visibility AS video_visibility,
+        COUNT(*) AS video_count
+    FROM z_video
+    GROUP BY channel_id, visibility
+
+    UNION ALL
+
+    SELECT
+        channel_id AS channel_id,
+        NULL AS video_visibility,
+        COUNT(*) AS video_count
+    FROM z_video
+    GROUP BY channel_id
+
+    UNION ALL
+
+    SELECT
+        NULL AS channel_id,
+        NULL AS video_visibility,
+        COUNT(*) AS video_count
+    FROM z_video
+)
+ORDER BY channel_id, video_visibility, video_count NULLS FIRST;
+```
+
+#pagebreak()
 
 == SQL S05 L03
 - Multiple operations in SQL – UNION, UNION ALL, INTERSECT, MINUS
@@ -352,6 +490,8 @@ ORDER BY 1; -- first item in the select list
 -- ORDER BY username; -- could also be this though
 ```
 
+#pagebreak()
+
 == SQL S06 L01
 - Nested queries
     - Result as a single value
@@ -359,20 +499,27 @@ ORDER BY 1; -- first item in the select list
     - EXISTS, NOT EXISTS
 
 ```sql
-SELECT * FROM z_channel;
-
-SELECT username FROM z_user
+SELECT username 
+FROM z_user
 WHERE user_id = (SELECT user_id FROM z_channel WHERE channel_name = 'Hicks Ltd');
 
-SELECT v.channel_id, v.title FROM z_video v
-WHERE (v.channel_id, v.visibility) IN (SELECT p.channel_id, p.visibility FROM z_playlist p);
+SELECT 
+    v.channel_id, 
+    v.title 
+FROM z_video v
+WHERE (v.channel_id, v.visibility) IN (
+    SELECT p.channel_id, p.visibility FROM z_playlist p
+);
 
 -- users with at least one video
-SELECT * FROM z_user u
+SELECT * 
+FROM z_user u
 WHERE EXISTS (
     SELECT 1 FROM z_video v
     WHERE v.channel_id IN (
-        SELECT c.channel_id FROM z_channel c WHERE c.user_id = u.user_id
+        SELECT c.channel_id 
+        FROM z_channel c 
+        WHERE c.user_id = u.user_id
     )
 );
 ```
@@ -381,8 +528,13 @@ WHERE EXISTS (
 - One-line subqueries
 
 ```sql
-SELECT channel_name,
-       (SELECT COUNT(*) FROM z_video v WHERE v.channel_id = c.channel_id) AS video_count
+SELECT 
+    channel_name,
+    (
+        SELECT COUNT(*) 
+        FROM z_video v 
+        WHERE v.channel_id = c.channel_id
+    ) AS video_count
 FROM z_channel c;
 ```
 
@@ -394,11 +546,13 @@ FROM z_channel c;
 
 ```sql
 -- users with private playlists
-SELECT username FROM z_user
+SELECT username 
+FROM z_user
 WHERE user_id IN (SELECT user_id FROM z_playlist WHERE visibility = 'private');
 
 -- playlists that belong to deleted channels
-SELECT playlist_id, channel_id FROM z_playlist
+SELECT playlist_id, channel_id 
+FROM z_playlist
 WHERE channel_id = ANY (
     SELECT channel_id
     FROM z_channel
@@ -406,7 +560,8 @@ WHERE channel_id = ANY (
 );
 
 -- playlist with the highest "order"
-SELECT pv1.playlist_id, "order" FROM z_playlist_video pv1
+SELECT pv1.playlist_id, "order" 
+FROM z_playlist_video pv1
 WHERE "order" >= ALL (
     SELECT "order" FROM z_playlist_video
 );
@@ -416,14 +571,19 @@ WHERE "order" >= ALL (
 - WITH ... AS() subquery construction
 
 ```sql
-SELECT SYSDATE - 30 AS back_x_days, ADD_MONTHS(SYSDATE, 2) AS back_x_months FROM dual;
+SELECT 
+    SYSDATE - 30 AS back_x_days, 
+    ADD_MONTHS(SYSDATE, 2) AS back_x_months 
+FROM dual;
 
 -- channels that uploaded videos last x years
 WITH recent_videos AS (
     SELECT * FROM z_video
     WHERE upload_date > ADD_MONTHS(SYSDATE, -2 * 12)
 )
-SELECT channel_id, COUNT(*) AS video_count
+SELECT 
+    channel_id, 
+    COUNT(*) AS video_count
 FROM recent_videos
 GROUP BY channel_id;
 ```
@@ -437,7 +597,8 @@ GROUP BY channel_id;
 
 ```sql
 -- Simple INSERT
-INSERT INTO z_category VALUES (1, 11, 'Technology');
+INSERT INTO z_category 
+VALUES (1, 11, 'Technology');
 
 -- Column-specified INSERT
 INSERT INTO z_category(parent_category_id, category_name)
@@ -458,10 +619,13 @@ FROM z_user WHERE username = 'newuser';
 
 ```sql
 -- UPDATE
-UPDATE z_video SET title = 'Updated Title' WHERE video_id = 1;
+UPDATE z_video 
+SET title = 'Updated Title' 
+WHERE video_id = 1;
 
 -- DELETE
-DELETE FROM z_comment WHERE comment_id = 1;
+DELETE FROM z_comment 
+WHERE comment_id = 1;
 ```
 
 #pagebreak()
@@ -475,23 +639,21 @@ INSERT INTO z_user (username, first_name, last_name, email, is_deleted)
 VALUES ('defaultuser', 'Def', 'User', 'def@user.com', DEFAULT);
 
 -- MERGE example
-MERGE INTO z_user u                                             -- destination
-    USING
-    (
-        SELECT 1 AS user_id, 'mergeuser' AS username FROM DUAL  -- data source
-    ) src
-    ON (u.user_id = src.user_id)                                -- condition
-WHEN MATCHED THEN                                               -- update clause
-    UPDATE SET u.username = src.username || '_updated'
-WHEN NOT MATCHED THEN                                           -- insert clause
-    INSERT (user_id, username, first_name, last_name, email)
-    VALUES (
-        src.user_id,
-        src.username,
-        'M',
-        'U',
-        'mu@example.com'
-    );
+MERGE INTO z_user u               -- destination
+    USING (
+      SELECT 
+        1 AS user_id, 
+        'mergeuser' AS username 
+      FROM DUAL  
+    ) src                         -- data source
+  ON (u.user_id = src.user_id)    -- condition (true -> matched, false -> not matched)
+    WHEN MATCHED THEN                                               
+      UPDATE SET u.username = src.username || '_updated'        -- udpate clause
+    WHEN NOT MATCHED THEN                                           
+      INSERT (user_id, username, first_name, last_name, email)  -- insert clause
+      VALUES (src.user_id, src.username, 'M', 'U', 'mu@example.com');
+
+
 
 DELETE FROM z_user WHERE username LIKE 'mergeuser%';
 SELECT * FROM z_user;
@@ -508,29 +670,77 @@ SELECT * FROM z_user WHERE username LIKE 'mergeuser%';
   ACCESS PARAMETERS, RECORDS DELIMITED BY NEWLINE, FIELDS, LOCATION*
 
 ```sql
-DROP TABLE Z_TEST_OBJECT;
-
 -- CREATE with constraints
 CREATE TABLE z_test_object (
     id NUMBER PRIMARY KEY,
     name NVARCHAR2(100) DEFAULT 'N/A' NOT NULL
 );
 
-SELECT * FROM z_test_object;
-
 -- ALTER, RENAME, DROP
 ALTER TABLE z_test_object ADD description NVARCHAR2(200);
+
 RENAME z_test_object TO z_test_renamed;
+
 DROP TABLE z_test_renamed;
 
 -- TRUNCATE
 INSERT INTO z_test_renamed(id, name)
-SELECT user_id,username FROM z_user;
-
-SELECT * FROM z_test_renamed;
+  SELECT user_id, username 
+  FROM z_user;
 
 TRUNCATE TABLE z_test_renamed;
 ```
+
+#pagebreak()
+
+```sql
+-- create a directory object pointing to the location of the files
+CREATE OR REPLACE DIRECTORY ext_tab_dir AS './ext_data';
+
+-- load data from external files
+CREATE TABLE x_country_ext (
+    country_code      VARCHAR2(5),
+    country_name      VARCHAR2(50),
+    country_language  VARCHAR2(50)
+)
+ORGANIZATION EXTERNAL (
+    TYPE ORACLE_LOADER
+    DEFAULT DIRECTORY ext_tab_dir
+    ACCESS PARAMETERS (
+        RECORDS DELIMITED BY NEWLINE
+        FIELDS TERMINATED BY ','
+        MISSING FIELD VALUES ARE NULL
+        RECORDS FIXED 20 FIELDS
+        (
+            country_code      CHAR(5),
+            country_name      CHAR(50),
+            country_language  CHAR(50)
+        )
+    )
+    LOCATION (
+        'Countries1.txt',
+        'Countries2.txt'
+    )
+);
+
+-- Countries1.txt 
+/*
+ENG,England,English
+SCO,Scotland,English
+IRE,Ireland,English
+WAL,Wales,Welsh
+*/
+
+-- Countries2.txt
+/*
+FRA,France,French
+GER,Germany,German
+USA,Unites States of America,English
+*/
+
+```
+
+
 
 #pagebreak()
 
@@ -544,16 +754,17 @@ TRUNCATE TABLE z_test_renamed;
 ```sql
 -- Advanced data types
 CREATE TABLE z_types_demo (
-  ts TIMESTAMP,
-  ts_tz TIMESTAMP WITH TIME ZONE,
-  ts_ltz TIMESTAMP WITH LOCAL TIME ZONE,
-  iv1 INTERVAL YEAR TO MONTH,  -- stores intervals using year and month
-  iv2 INTERVAL DAY TO SECOND, -- stores intervals using days, hours, minutes, and seconds including fractional seconds
-  c CHAR(10),
-  vc VARCHAR2(100),
-  txt CLOB,
-  n NUMBER,
-  bin BLOB
+    n       NUMBER, 
+    c       CHAR(10),
+    vc      VARCHAR2(100),
+    ts      TIMESTAMP,
+    ts_tz   TIMESTAMP WITH TIME ZONE,
+    ts_ltz  TIMESTAMP WITH LOCAL TIME ZONE,
+    iv1     INTERVAL YEAR TO MONTH,   -- stores intervals using year and month
+    iv2     INTERVAL DAY TO SECOND,   -- stores intervals using days, hours, minutes, 
+                                      -- and seconds including fractional seconds
+    txt     CLOB, -- character large object
+    bin     BLOB --  binary large object
 );
 
 SELECT * FROM z_types_demo;
@@ -588,6 +799,14 @@ ALTER TABLE z_demo_student ADD email NVARCHAR2(100);
 ALTER TABLE z_demo_student MODIFY email NVARCHAR2(300);
 ALTER TABLE z_demo_student DROP COLUMN email;
 
+CREATE TABLE z_demo_student (years_of_undergrad INTERVAL YEAR TO MONTH);
+
+INSERT INTO z_demo_student VALUES (INTERVAL '10-2' YEAR TO MONTH);
+INSERT INTO z_demo_student VALUES (INTERVAL '2-3' YEAR TO MONTH);
+INSERT INTO z_demo_student VALUES (INTERVAL '9' MONTH);
+
+DROP TABLE z_demo_student;
+
 -- FLASHBACK
 FLASHBACK TABLE z_demo_student TO BEFORE DROP;
 
@@ -618,21 +837,24 @@ ALTER TABLE z_demo_student SET UNUSED (email);
 ```sql
 -- Table with named constraints
 CREATE TABLE z_example_constraints (
-   id NUMBER CONSTRAINT pk_example PRIMARY KEY,
-   name NVARCHAR2(100) CONSTRAINT nn_example_name NOT NULL,
-   code NVARCHAR2(10) CONSTRAINT uq_example_code UNIQUE
+    id NUMBER CONSTRAINT pk_example PRIMARY KEY,
+    name NVARCHAR2(100) CONSTRAINT nn_example_name NOT NULL,
+    code NVARCHAR2(10) CONSTRAINT uq_example_code UNIQUE
 );
 
 -- CREATE TABLE AS SELECT
-CREATE TABLE z_user_copy AS SELECT * FROM z_user;
+CREATE TABLE z_user_copy AS 
+    SELECT * 
+    FROM z_user;
 
-SELECT * FROM z_user_copy;
+SELECT * 
+FROM z_user_copy;
+
 DROP TABLE z_user_copy;
 ```
 
 == SQL S10 L02
-- CONSTRAINT – NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY (atr REFERENCES
-Tab(atr) ), CHECK
+- CONSTRAINT – NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY (atr REFERENCES Tab(atr) ), CHECK
 - Foreign keys, ON DELETE, ON UPDATE, RESTRICT, CASCADE, etc.
 
 ```sql
@@ -641,9 +863,8 @@ CREATE TABLE z_fk_demo (
     id NUMBER PRIMARY KEY,
     user_id NUMBER,
     CONSTRAINT fk_demo_user 
-      FOREIGN KEY (user_id) 
-      REFERENCES z_user(user_id) 
-      ON DELETE CASCADE
+        FOREIGN KEY (user_id) REFERENCES z_user(user_id) 
+        ON DELETE CASCADE
 );
 
 -- CHECK constraint
@@ -656,8 +877,11 @@ ALTER TABLE z_fk_demo ADD CONSTRAINT ck_demo_id CHECK (id > 0);
 - about USER_CONSTRAINTS
 
 ```sql
--- Inspect user constraints
-SELECT constraint_name, constraint_type, table_name
+-- Inspect user constraints of table "z_user"
+SELECT 
+    constraint_name, 
+    constraint_type, 
+    table_name
 FROM user_constraints
 WHERE table_name = 'Z_USER';
 ```
@@ -672,26 +896,24 @@ WHERE table_name = 'Z_USER';
 ```sql
 -- Simple view
 CREATE OR REPLACE VIEW v_active_users AS
-SELECT user_id, username, email
-FROM z_user
-WHERE is_deleted = 0;
+    SELECT user_id, username, email
+    FROM z_user
+    WHERE is_deleted = 0;
 
 -- View with CHECK OPTION
--- any INSERT or UPDATE done through the view must result
--- in rows that are still visible in the view
--- -> that is, they must satisfy the view's WHERE condition.
+--    any INSERT or UPDATE done through the view must result
+--    in rows that are still visible in the view
+--    that is, they must satisfy the view's WHERE condition.
 CREATE OR REPLACE VIEW v_public_playlists AS
-SELECT *
-FROM z_playlist
-WHERE visibility = 'public'
+    SELECT *
+    FROM z_playlist
+    WHERE visibility = 'public'
 WITH CHECK OPTION;
-
-SELECT *
-FROM v_public_playlists;
 
 -- Read-only view
 CREATE OR REPLACE VIEW v_readonly AS
-SELECT video_id, title FROM z_video
+    SELECT video_id, title 
+    FROM z_video
 WITH READ ONLY;
 ```
 
@@ -734,6 +956,7 @@ INSERT INTO z_demo_student(name) VALUES ('doe');
 SELECT * FROM z_demo_student;
 
 DROP SEQUENCE seq_demo_student_id;
+
 DROP TABLE z_demo_student;
 ```
 
@@ -756,11 +979,14 @@ INSERT, REFERENCES, SELECT, UPDATE) – (TABLE, VIEW, SEQUENCE, PROCEDURE)
 ```sql
 -- Granting privileges
 GRANT SELECT, INSERT, UPDATE ON z_user TO PUBLIC;
+
 GRANT DELETE ON z_video TO some_user;
 
 -- Revoking privileges
 REVOKE SELECT, INSERT, UPDATE ON z_user FROM PUBLIC;
 ```
+
+#pagebreak()
 
 == SQL S13 L03
 - Regular expressions
@@ -768,18 +994,40 @@ REVOKE SELECT, INSERT, UPDATE ON z_user FROM PUBLIC;
 
 ```sql
 -- Regular expressions
-SELECT email FROM z_user;
-SELECT email FROM z_user WHERE REGEXP_LIKE(email, '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$');
-SELECT REGEXP_REPLACE('123-456-7890', '[^0-9]', 'non_number') FROM DUAL;
-SELECT REGEXP_INSTR('aa1b2c3', '[0-9]') FROM DUAL; -- returns index 3 because number '1' is at that position
+SELECT email 
+FROM z_user 
+WHERE REGEXP_LIKE(email, '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$');
+
+SELECT REGEXP_REPLACE(
+    '123-456-7890', 
+    '[^0-9]', 
+    'non_number'
+) FROM DUAL;
+
+-- returns index 3 because number '1' is at that position
+SELECT REGEXP_INSTR(
+    'aa1b2c3', 
+    '[0-9]'
+) FROM DUAL; 
+
 SELECT REGEXP_SUBSTR(
-    'abc123def456aaa111bbb222',
+    'abc123def456ghi789jkl012',
     '[0-9]+',
     10,                         -- starting pos in source string
     3                           -- occurrence
-)
-FROM DUAL;
-SELECT REGEXP_COUNT('x1y2z3', '[0-9]') FROM DUAL;
+) FROM DUAL;
+
+-- 8
+SELECT REGEXP_COUNT(
+    'a1b2c3d45e67f8g', 
+    '[0-9]'
+) FROM DUAL;
+
+-- 6
+SELECT REGEXP_COUNT(
+    'a1b2c3d45e67f8g', 
+    '[0-9]+'
+) FROM DUAL;
 ```
 
 #pagebreak()
@@ -796,17 +1044,25 @@ DECLARE
 BEGIN
     SAVEPOINT before_update;
 
-    UPDATE z_user SET email = 'new@email.com' WHERE user_id = 1;
+    -- do some transaction stuff
+    UPDATE z_user 
+    SET email = 'new@email.com' 
+    WHERE user_id = 1;
 
+    -- throw error if something goes wrong
     IF v_success = 0 THEN
         RAISE_APPLICATION_ERROR(50001, 'Transaction failed :(');
     END IF;
-
+    
+    -- if nothing went wrong, commit the changes
     COMMIT;
-    DBMS_OUTPUT.PUT_LINE('Commited changes');
-EXCEPTION WHEN OTHERS THEN
-    ROLLBACK TO before_update;
-    DBMS_OUTPUT.PUT_LINE('Rolling back changes');
+    DBMS_OUTPUT.PUT_LINE('Transaction successful - changes commited');
+
+EXCEPTION 
+    WHEN OTHERS THEN
+        -- if anything goes wrong, rollback
+        ROLLBACK TO before_update;
+        DBMS_OUTPUT.PUT_LINE('Transaction failed - rolling back changes');
 END;
 ```
 
@@ -818,34 +1074,37 @@ END;
 
 ```sql
 -- Join using WHERE (legacy style)
+
 SELECT *
-FROM z_user u,
-     z_channel c
+FROM 
+    z_user u,
+    z_channel c
 WHERE u.user_id = c.user_id;
 
 -- LEFT and RIGHT JOIN using (+) operator
+
 SELECT *
 FROM z_video v
 LEFT JOIN z_video_view vv ON v.video_id = vv.video_id
-WHERE vv.VIDEO_VIEW_ID IS NULL
-;
-
+WHERE vv.VIDEO_VIEW_ID IS NULL;
+-- equivalent to
 SELECT *
-FROM z_video v,
-     z_video_view vv
+FROM 
+    z_video v,
+    z_video_view vv
 WHERE v.video_id = vv.video_id(+) -- the side with (+) is 'added'
-  AND vv.VIDEO_VIEW_ID IS NULL
-;
+  AND vv.VIDEO_VIEW_ID IS NULL;
+
 
 SELECT *
 FROM z_video_view vv
-LEFT JOIN z_video v ON vv.video_id = v.video_id
-;
-
+RIGHT JOIN z_video v ON vv.video_id = v.video_id;
+-- equivalent to
 SELECT *
-FROM z_video_view vv,
-     z_video v
-WHERE v.video_id(+) = vv.video_id;
+FROM 
+    z_video_view vv,
+    z_video v
+WHERE v.video_id = vv.video_id(+);
 ```
 
 /*
