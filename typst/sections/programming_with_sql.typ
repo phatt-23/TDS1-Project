@@ -265,9 +265,11 @@ WITH t_video_view AS (
 ), t_reaction_count AS (
     SELECT
         (SELECT COUNT(*) FROM z_reaction r
-         WHERE r.video_id = v.video_id AND reaction_kind = 'like') AS like_count,
+         WHERE r.video_id = v.video_id 
+         AND reaction_kind = 'like') AS like_count,
         (SELECT COUNT(*) FROM z_reaction r
-         WHERE r.video_id = v.video_id AND reaction_kind = 'dislike') AS dislike_count
+         WHERE r.video_id = v.video_id 
+         AND reaction_kind = 'dislike') AS dislike_count
     FROM z_video v
 )
 SELECT
@@ -373,13 +375,32 @@ GROUP BY visibility;
 -- GROUP BY CUBE
 -- every combination, resulting in 2 ** n grouping sets
 -- where n is number of columns in the cube list
-SELECT channel_id,
-       visibility AS video_visibility,
-       COUNT(*) AS video_count
+SELECT 
+    channel_id,
+    visibility AS video_visibility,
+    COUNT(*) AS video_count
 FROM z_video
 GROUP BY CUBE(channel_id, visibility)
 ORDER BY channel_id, video_visibility, video_count NULLS LAST;
 
+-- is equivalent to this:
+SELECT 
+    channel_id,
+    visibility AS video_visibility,
+    COUNT(*) AS video_count
+FROM z_video
+GROUP BY GROUPING SETS(
+    (),
+    (channel_id),
+    (visibility),
+    (channel_id, visibility)
+)
+ORDER BY channel_id, video_visibility, video_count NULLS LAST;
+```
+
+#pagebreak()
+
+```sql
 -- is equivalent to this:
 SELECT *
 FROM (
@@ -419,6 +440,8 @@ ORDER BY channel_id, video_visibility, video_count NULLS FIRST;
 
 ```sql
 -- GROUP BY ROLLUP
+-- group by channel_id, visibility
+-- with hierarchical subtotals per group and grand total being the sum of all subtotals
 SELECT
     channel_id,
     visibility AS video_visibility,
@@ -426,10 +449,27 @@ SELECT
 FROM z_video
 GROUP BY ROLLUP(channel_id, visibility)
 ORDER BY channel_id, video_visibility, video_count NULLS FIRST;
--- group by channel_id, visibility
--- with hierarchical subtotals per group and grand total being the sum of all subtotals
 
 -- equivalent to this:
+
+SELECT
+    channel_id,
+    visibility AS video_visibility,
+    COUNT(*) AS video_count
+FROM z_video
+GROUP BY GROUPING SETS(
+    (channel_id, visibility),
+    (channel_id), 
+    ()
+)
+ORDER BY channel_id, video_visibility, video_count NULLS FIRST;
+```
+
+#pagebreak()
+
+```sql
+-- equivalent to this:
+
 SELECT * FROM (
     SELECT
         channel_id AS channel_id,
@@ -639,19 +679,19 @@ INSERT INTO z_user (username, first_name, last_name, email, is_deleted)
 VALUES ('defaultuser', 'Def', 'User', 'def@user.com', DEFAULT);
 
 -- MERGE example
-MERGE INTO z_user u               -- destination
+MERGE INTO z_user u                 -- destination
     USING (
-      SELECT 
-        1 AS user_id, 
-        'mergeuser' AS username 
-      FROM DUAL  
-    ) src                         -- data source
-  ON (u.user_id = src.user_id)    -- condition (true -> matched, false -> not matched)
-    WHEN MATCHED THEN                                               
-      UPDATE SET u.username = src.username || '_updated'        -- udpate clause
-    WHEN NOT MATCHED THEN                                           
-      INSERT (user_id, username, first_name, last_name, email)  -- insert clause
-      VALUES (src.user_id, src.username, 'M', 'U', 'mu@example.com');
+        SELECT 
+            1 AS user_id, 
+            'mergeuser' AS username 
+        FROM DUAL  
+    ) src                           -- data source
+    ON (u.user_id = src.user_id)    -- condition (true -> matched, false -> not matched)
+        WHEN MATCHED THEN                                               
+            UPDATE SET u.username = src.username || '_updated'        -- udpate clause
+        WHEN NOT MATCHED THEN                                           
+            INSERT (user_id, username, first_name, last_name, email)  -- insert clause
+            VALUES (src.user_id, src.username, 'M', 'U', 'mu@example.com');
 
 
 
@@ -685,13 +725,15 @@ DROP TABLE z_test_renamed;
 
 -- TRUNCATE
 INSERT INTO z_test_renamed(id, name)
-  SELECT user_id, username 
-  FROM z_user;
+    SELECT user_id, username 
+    FROM z_user;
 
 TRUNCATE TABLE z_test_renamed;
 ```
 
 #pagebreak()
+
+This cannot be ran on uni's Oracle server. Missing privileges.
 
 ```sql
 -- create a directory object pointing to the location of the files
@@ -707,10 +749,10 @@ ORGANIZATION EXTERNAL (
     TYPE ORACLE_LOADER
     DEFAULT DIRECTORY ext_tab_dir
     ACCESS PARAMETERS (
-        RECORDS DELIMITED BY NEWLINE
+        RECORDS DELIMITED BY NEWLINE  -- could be '|' or ';', etc.
         FIELDS TERMINATED BY ','
         MISSING FIELD VALUES ARE NULL
-        RECORDS FIXED 20 FIELDS
+        RECORDS FIXED 512 FIELDS      -- 512 bytes per record
         (
             country_code      CHAR(5),
             country_name      CHAR(50),
@@ -924,8 +966,11 @@ WITH READ ONLY;
 
 ```sql
 -- Inline view
-SELECT alt.title FROM (
-    SELECT title FROM z_video WHERE is_deleted = 0
+SELECT alt.title 
+FROM (
+    SELECT title 
+    FROM z_video 
+    WHERE is_deleted = 0
 ) alt;
 ```
 
